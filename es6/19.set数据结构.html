@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let s1 = new Set();
+    console.log(s1.size); //0
+
+    let s2 = new Set([1, 2]);
+    console.log(s2.size); //2
+
+    // 利用Set去重
+    let s3 = new Set([1, 1, 2, 2, 3, 3]);
+    console.log(s3.size); //3
+    console.log(s3); // {1, 2, 3}
+    console.log(...s3); // 1 2 3
+    let newS3 = [...s3];
+    console.log(newS3); //[1,2,3]
+
+    //set对象实例方法
+    //add方法
+    let s4 = new Set();
+    s4.add(1).add(2);
+    console.log(s4.size); //2
+
+    //delete方法
+    let b1 = s4.delete(1);
+    console.log(b1); //true
+    console.log(s4.size); //1
+
+    //has方法
+    let b2 = s4.has(2);
+    console.log(b2); //true
+
+    //clear方法
+    s4.clear();
+    console.log(s4.size); //0
+
+    //遍历set
+    let forSet = ['a', 'b', 'c'];
+    forSet.forEach(value => console.log(value)); //a  b  c
+
+    // 利用 Set 去重
+    let set1 = new Set([1, 33, 2, 3, 2, 34, 32, 34, 23, 33]);
+    let newset = [...set1];
+    console.log(newset);
+  </script>
+</body>
+
+</html>

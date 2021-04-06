@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        .content {
+            width: 1000px;
+            height: 1000px;
+            margin: 500px auto 500px auto;
+            background-color: cyan;
+        }
+
+        .returnTop {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            right: 0;
+            bottom: 100px;
+            background-color: pink;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content"></div>
+    <div class="returnTop">返回顶部</div>
+    <script>
+        $(function () {
+            var offsetTop = $(".content").offset().top;
+            $(window).scroll(function () {
+                // console.log($(document).scrollTop());
+                if ($(document).scrollTop() >= offsetTop) {
+                    $(".returnTop").fadeIn();
+                } else {
+                    $(".returnTop").fadeOut();
+                }
+            })
+            $(".returnTop").click(function () {
+                $("body,html").animate({
+                    scrollTop: 0
+                });
+            })
+        })
+    </script>
+</body>
+
+</html>

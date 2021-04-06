@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 把工资超过2000的删除
+        var arr = [1500, 1200, 2000, 2100, 1800];
+        var choose = function() {
+
+            var newArr = []
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] >= 2000) {
+                    newArr.unshift(arr[i]);
+                    newArr.push(arr[i]);
+                }
+            }
+            return newArr
+        }
+        console.log(choose());
+        console.log(arr instanceof Array);
+        console.log(arr instanceof Object);
+        // console.log(Array.isArray(newArr)); //not defined
+
+
+        //把身高低于170的删除
+        // var arr = [176, '153', '160', '172', '168', '179'];
+        // var height = function() {
+        //     var newArr = [];
+        //     for (var i = 0; i < arr.length; i++) {
+        //         if (arr[i] >= 170)
+        //             newArr.push(arr[i]);
+        //     }
+        //     return newArr;
+        // }
+        // console.log(height());
+        console.log(typeof arr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

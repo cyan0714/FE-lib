@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./images/钢铁侠.png" alt="">
+</body>
+<script>
+    //核心原理：每次移动鼠标，都将鼠标的坐标值赋值给 img 的 left 和 top 值
+    var img = document.querySelector('img');
+    document.addEventListener("mousemove", function(e) {
+        var x = e.pageX;
+        var y = e.pageY;
+        img.style.left = x - 40 + 'px';
+        img.style.top = y - 42 + 'px';
+    })
+</script>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.字面量创建对象
+        var obj = {
+            color: 'black',
+            weight: '714g',
+            brand: '华硕',
+            system: 'w10',
+            watchMovies: function() {
+                console.log('watchMovies');
+            },
+            lisenMusic: function() {
+                console.log('lisenMusic');
+            },
+            playGames: function() {
+                console.log('playgames');
+            },
+            playVscode: function() {
+                console.log('playvscode');
+            }
+        }
+        console.log(obj.weight);
+        console.log(obj['brand']);
+        obj.watchMovies();
+        obj.playGames();
+        // for (var k in obj) {
+        //     console.log(k);
+        //     console.log(obj[k]);
+        // }
+
+        //2.new创建对象
+        var button = new Object();
+        button.width = '70px';
+        button.height = '140px';
+        button.background = 'pink';
+        button.onClick = function() {
+            console.log('onclick');
+        }
+        console.log(button.height);
+        console.log(button['width']);
+
+        //3.构造函数和new创建对象
+        function Car(weight, color, brand) {
+            this.weight = weight;
+            this.color = color;
+            this.brand = brand;
+            this.sendPeople = function() {
+                console.log('正在载人');
+            }
+            this.sendThing = function() {
+                console.log('正在送货');
+            }
+            this.plowing = function() {
+                console.log('正在耕田');
+            }
+        }
+        var Benz = new Car('2吨', 'pink', '奔驰哟');
+        console.log(Benz);
+        Benz.sendPeople();
+        Benz.sendThing();
+        Benz.plowing();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let fn = () => {
+            console.log(123);
+        }
+        fn();
+
+
+        let fun = (num1, num2) => num1 + num2;
+        let total = fun(2, 22);
+        console.log(total);
+        // console.log();
+
+        let one = v => v;
+        console.log(one(2));
+
+        //箭头函数不绑定 this 箭头函数没有自己的 this 关键字
+        //如果在箭头函数中使用 this
+        //this 关键字将指向箭头函数定义位置中的 this
+        function fn1() {
+            console.log(this);
+            return () => {
+                console.log(this);
+            }
+        };
+        let obj = {
+            name: 'zhangsan',
+
+        }
+        let result = fn1.call(obj);
+        result();
+
+        //箭头函数面试题
+        //请问 say 中的 this 指向谁
+        let obj1 = {
+            age: 20,
+            say: () => {
+                console.log(this);
+            }
+        }
+        obj1.say(); //对象不是函数，所以 this 指向 window
+    </script>
+</body>
+
+</html>

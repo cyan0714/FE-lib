@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.替换字符 replace
+        var str = 'andyandy';
+        console.log(str.replace('a', ('b'))); //只会将第一个a替换为b
+        //例：有个一个字符串 'cgddlsbbyjywjcdrszys' 要求把里面所有的d换成 * 号
+        var str = 'cgddlsbbyjywjcdrszys';
+        while (str.indexOf('d') !== -1) {
+            str = str.replace(('d'), ('*'));
+        }
+        console.log(str);
+        //2.字符串转换为数组 split,而join是把数组转换为字符串
+        var str2 = 'red,green,blue';
+        console.log(str2.split(','));
+        var str3 = 'red&green&blue';
+        console.log(str3.split('&'));
+        var arr = ['red', 'green', 'blue'];
+        console.log(arr instanceof Array);
+        console.log(arr.join());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

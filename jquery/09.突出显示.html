@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        body {
+            background-color: black;
+        }
+        
+        ul {
+            overflow: hidden;
+            width: 660px;
+            margin: 150px auto;
+            border: 2px solid #fff;
+        }
+        
+        li {
+            float: left;
+            width: 200px;
+            height: 200px;
+            border: 10px solid black;
+        }
+        
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <img src='images/EZ.jpg'>
+        </li>
+        <li>
+            <img src='images/阿卡丽.jpg'>
+        </li>
+        <li>
+            <img src='images/皎月.jpg'>
+        </li>
+        <li>
+            <img src='images/盲僧.jpg'>
+        </li>
+        <li>
+            <img src='images/提莫.jpg'>
+        </li>
+        <li>
+            <img src='images/亚索.jpg'>
+        </li>
+    </ul>
+    <script>
+        $(function() {
+            $('li').hover(function() {
+                $(this).siblings().stop().fadeTo(500, 0.2)
+            }, function() {
+                $(this).siblings().stop().fadeTo(500, 1);
+            })
+        })
+    </script>
+</body>
+
+</html>

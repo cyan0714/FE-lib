@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // let fn = (...args) => {
+    //     let total = 0;
+    //     args.forEach((item) => {
+    //         total += item;
+    //     });
+    //     return total;
+    // }
+    // console.log(fn(1, 2));
+    // console.log(fn(1, 2, 3));
+
+    let foo = ((...args) => {
+      let total = 0
+      console.log(args);
+      args.forEach(item => total += item)
+      return total
+    })
+    console.log(foo(1, 2, 3, 4, 5));
+  </script>
+</body>
+
+</html>

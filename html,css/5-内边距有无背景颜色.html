@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 1.块级元素的内边距有背景颜色 */
+
+    p {
+      background-color: cyan;
+      /* padding: 20px; */
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 2.行内元素只有左右有内边距，虽然按f12可以看到padding-bottom有粉色背景颜色，但是只是"表象",如本例，在span后面放个div，而div却可以无视span的下内边距，直接顶上去，以至于只显示了一部分蓝色 */
+
+    span {
+      /* position: absolute; */
+      background-color: pink;
+      padding: 100px;
+    }
+
+    div {
+      width: 200px;
+      height: 290px;
+      background-color: skyblue;
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落</p>
+  <span>这是一个span这是一个span这是一个span</span>
+  <div>这是一个div</div>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="button1">按钮</button>
+  <script>
+    // document.getElementById("button1").disabled = true
+    document.querySelector('button').setAttribute("disabled", 'false') // 无论第二个参数的 true 还是 false,结果都被禁用
+    document.querySelector('#button1').removeAttribute('disabled') // 想移除可以添加此属性 removeAttribute
+  </script>
+</body>
+
+</html>

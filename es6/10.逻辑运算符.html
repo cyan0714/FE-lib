@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let a = 11 || 22;
+        console.log(a); //11
+        let b = 0 || 22;
+        console.log(b); //22
+        let c = 11 || 22 || 33;
+        console.log(c); //11
+        let d = 0 || 22 || 33;
+        console.log(d); //22
+        console.log('--------------------------');
+
+
+        let e = 11 && 22;
+        console.log(e); //22
+        let f = 0 && 22;
+        console.log(f); //0
+        let g = 11 && 22 && 33;
+        console.log(g); //33
+        let h = 0 && 22 && 33;
+        console.log(h); //0
+        console.log('----------------------------');
+
+
+
+        let i = 11 && 22 || 33;
+        console.log(i); //22
+        let j = 0 && 22 || 33;
+        console.log(j); //33
+        console.log('---------------------------');
+
+
+        let k = 11 || 0 && 33;
+        console.log(k); //11
+        let l = 0 || 22 && 33;
+        console.log(l); //33
+    </script>
+</body>
+
+</html>

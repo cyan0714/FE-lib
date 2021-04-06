@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // class Person {
+    //   constructor(name) {
+    //     this.name = name;
+    //   }
+    //   showName() {
+    //     console.log(`my name is${this.name}`);
+    //   }
+    //   showNameDelay(time) {
+    //     setTimeout(() => {
+    //       console.log(`hello,my name is ${this.name}`);
+    //     }, time);
+    //   }
+    // }
+    // var ldh = new Person('刘德华');
+    // console.log(ldh);
+    // ldh.showName();
+    // ldh.showNameDelay(1000);
+
+    function Person(name) {
+      this.name = name;
+    }
+    Person.prototype.showName = function () {
+      console.log('my name is' + this.name);
+    }
+    Person.prototype.showNameDelay = function (time) {
+      setTimeout(() => {
+        console.log('hello,my name is' + this.name);
+      }, time)
+    }
+    let cyan = new Person('cyan');
+    console.log(cyan);
+    cyan.showName();
+    cyan.showNameDelay(5000);
+  </script>
+</body>
+
+</html>

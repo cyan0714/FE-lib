@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Stack() {
+            this.items = [];
+
+            Stack.prototype.push = function(element) {
+                this.items.push(element);
+            }
+
+            Stack.prototype.isEmpty = function() {
+                return this.items.length == 1;
+            }
+
+            Stack.prototype.pop = function() {
+                return this.items.pop()
+            }
+        }
+
+        function dec2bin(decNumber) {
+            var stack = new Stack()
+            while (decNumber > 0) {
+                stack.push(decNumber % 2);
+                decNumber = Math.floor(decNumber / 2);
+            }
+            var binString = '';
+            while (!stack.isEmpty()) {
+                binString += stack.pop();
+            }
+            return binString;
+        }
+        alert(dec2bin(100));
+    </script>
+</body>
+
+</html>

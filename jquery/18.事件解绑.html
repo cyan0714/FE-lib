@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: cyan;
+        }
+
+        .current {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        $(function () {
+            // $("div").on({
+            //     click: function () {
+            //         $(this).css("background", "purple");
+            //     },
+            //     mouseenter: function () {
+            //         $(this).css("background", "pink");
+            //     }
+            // })
+            // $("div").off();//将前面绑定的事件全部解除
+            $("div").one("mouseenter mouseout", function () {
+                $(this).toggleClass("current");
+            }) //只会执行一次
+
+
+        })
+    </script>
+</body>
+
+</html>

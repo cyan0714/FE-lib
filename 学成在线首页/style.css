@@ -1,0 +1,453 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f3f5f7;
+    /* height: 3000px; */
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.w {
+    width: 1200px;
+    margin: auto;
+}
+
+
+/* 头部header */
+
+.header {
+    height: 42px;
+    margin: 29px auto;
+}
+
+.logo {
+    float: left;
+}
+
+.nav {
+    float: left;
+    margin-left: 65px;
+}
+
+.nav ul li {
+    float: left;
+}
+
+.nav ul li a {
+    line-height: 42px;
+    /*行内元素可以设置行高*/
+    padding: 0 21px;
+    color: #050505;
+    font-size: 18px;
+}
+
+.nav ul li a:hover {
+    color: skyblue;
+    border-bottom: 2px solid #00a4ff;
+}
+
+.search {
+    position: relative;
+    float: left;
+    height: 42px;
+    line-height: 42px;
+    margin-left: 70px;
+    border: 1px solid #00a4ff;
+}
+
+.search input {
+    float: left;
+    width: 343px;
+    height: 40px;
+    color: #bfbfbf;
+    padding-left: 17px;
+    border: 0;
+    outline: none;
+}
+
+.search .button {
+    position: absolute;
+    top: -1px;
+    left: 343px;
+    width: 50px;
+    height: 42px;
+}
+
+.search .button img {
+    width: 100%;
+    height: 100%;
+}
+
+.user {
+    width: 140px;
+    float: right;
+    line-height: 42px;
+    text-align: center;
+    height: 42px;
+    margin-right: 8px;
+}
+
+.user img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+
+/* banner部分 */
+
+.banner {
+    background-color: #1c036c;
+    height: 420px;
+}
+
+.banner .w {
+    height: 420px;
+    background: url(images/banner2.png) no-repeat center;
+}
+
+.subnav {
+    width: 190px;
+    height: 420px;
+    background: rgba(0, 0, 0, 0.3);
+    float: left;
+}
+
+.subnav ul li {
+    height: 45px;
+    line-height: 45px;
+    margin: 0 20px;
+}
+
+.subnav a {
+    font-size: 14px;
+    color: #fff;
+}
+
+.subnav ul li:hover a {
+    color: #00b4ff;
+}
+
+
+/*单单写li:hover是不可以改变a里面文字的颜色的，原因是 a 元素继承的权重没有 a 标签浏览器默认设置的高，解决方法可以是在 hover 后面再加上 a*/
+
+.subnav span {
+    float: right;
+}
+
+.course {
+    width: 230px;
+    height: 300px;
+    background-color: #fff;
+    float: right;
+    margin-top: 50px;
+}
+
+.course h3 {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #9bceea;
+    font-size: 18px;
+    color: #fff;
+}
+
+.course .bd {
+    padding: 0 20px;
+}
+
+.bd ul li {
+    border-bottom: 1px solid #efefef;
+    padding: 13px 0;
+}
+
+.bd ul li h4 {
+    font-size: 16px;
+}
+
+.bd ul li p {
+    font-size: 14px;
+    color: #a5a5a5;
+}
+
+.more {
+    display: block;
+    height: 38px;
+    border: 2px solid #26abff;
+    text-align: center;
+    line-height: 34px;
+    color: #26abff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.goods {
+    width: 1140px;
+    height: 44px;
+    margin: 10px auto 0 auto;
+    background-color: #fff;
+    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1);
+    padding: 10px 30px;
+    border: 2px solid #ccc;
+}
+
+.goods h1 {
+    float: left;
+    font-size: 16px;
+    color: #26abff;
+    margin-right: 35px;
+}
+
+.goods ul li {
+    float: left;
+}
+
+.goods ul li a {
+    padding: 0 35px;
+    color: #050505;
+    border-left: 1.5px solid #bfbfbf;
+}
+
+.goods ul li a:hover {
+    color: #26abff;
+}
+
+.goods .mod {
+    float: right;
+    color: #26abff;
+}
+
+.box {
+    margin-top: 35px;
+    height: 612px;
+}
+
+.box-hd {
+    height: 42px;
+}
+
+.box-hd h3 {
+    float: left;
+    font-size: 20px;
+    color: #494949;
+}
+
+.box-hd a {
+    float: right;
+    margin-top: 10px;
+    margin-right: 30px;
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+
+/* 把ul修改为足够宽，一行能装开5个盒子就不会换行了 */
+
+.box-bd ul {
+    width: 1225px;
+}
+
+.box-bd ul li {
+    position: relative;
+    float: left;
+    width: 228px;
+    height: 270px;
+    background-color: #fff;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.box-bd ul li span img {
+    position: absolute;
+    top: 0;
+    right: -3.5px;
+}
+
+.box-bd ul li>img {
+    width: 100%;
+}
+
+.box-bd ul li h4 {
+    margin: 25px 25px 20px 25px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #050505;
+}
+
+.box-bd ul li .info {
+    margin: 0 25px;
+    color: #999;
+    font-size: 12px;
+}
+
+.box-bd ul li .info span {
+    color: #ff7c2d;
+}
+
+.programme {
+    margin-top: 20px;
+    background-color: #f3f5f7;
+    overflow: hidden;
+}
+
+.programme-hd {
+    height: 42px;
+}
+
+.programme-hd h3 {
+    float: left;
+    font-size: 20px;
+    color: #494949;
+    margin-top: 0px;
+}
+
+.programme-hd ul {
+    float: left;
+    margin-left: 350px;
+}
+
+.programme-hd ul li {
+    float: left;
+    margin: 7px 70px auto 0px;
+    /* background-color: yellow; */
+}
+
+.programme-hd ul li a {
+    float: left;
+    font-size: 16px;
+    color: #868686;
+}
+
+.programme-hd ul li:hover {
+    border-bottom: 2px solid skyblue;
+}
+
+.programme-hd .more {
+    float: right;
+    margin-top: 10px;
+    margin-right: 30px;
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+.programme-bd {
+    width: 1215px;
+}
+
+.programme-bd .left-prime {
+    /* width: 228px;
+    height: 392px; */
+    margin-right: 15px;
+    float: left;
+}
+
+.programme-bd .right-prime {
+    float: right;
+    width: 972px;
+}
+
+.programme-bd .right-prime .top {
+    /* float: right; */
+    /* width: 972px; */
+    height: 100px;
+    margin-bottom: 25px;
+}
+
+.programme-bd .right-prime .bottom ul {
+    width: 972px;
+    /* float: left; */
+}
+
+.programme-bd .right-prime .bottom ul li {
+    width: 228px;
+    height: 267px;
+    background-color: #fff;
+    margin-right: 15px;
+    float: left;
+}
+
+.programme-bd .right-prime .bottom img {
+    width: 100%;
+}
+
+.programme-bd .right-prime .bottom ul li h4 {
+    margin: 25px 25px 20px 25px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #050505;
+}
+
+.programme-bd .right-prime .bottom ul li .info {
+    margin: 0 25px;
+    color: #999;
+    font-size: 12px;
+}
+
+.programme-bd .right-prime .bottom ul li span {
+    color: #ff7c2d;
+}
+
+.footer {
+    height: 418px;
+    background-color: #fff;
+    margin-top: 42px;
+}
+
+.footer .w {
+    padding-top: 30px;
+}
+
+.copyright {
+    background-color: #fff;
+    float: left;
+}
+
+.copyright p {
+    font-size: 12px;
+    color: #666;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.copyright a {
+    display: block;
+    width: 118px;
+    height: 36px;
+    border: 1px solid #00a4ff;
+    line-height: 36px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.link {
+    float: right;
+}
+
+.link dl {
+    float: left;
+    margin-left: 35px;
+}
+
+.link dl dt {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.link dl dd a {
+    font-size: 12px;
+    color: #666;
+}
+
+.link dl dd a:hover {
+    color: skyblue;
+}

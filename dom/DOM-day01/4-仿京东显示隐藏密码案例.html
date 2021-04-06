@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot?oe0xpr');
+            src: url('fonts/icomoon.eot?oe0xpr#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?oe0xpr') format('truetype'), url('fonts/icomoon.woff?oe0xpr') format('woff'), url('fonts/icomoon.svg?oe0xpr#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        } */
+        
+        .box {
+            position: relative;
+            width: 400px;
+            margin: 100px auto;
+            border-bottom: 2px solid #ccc;
+        }
+        
+        input {
+            /*input 默认有 padding:1px 2px ;*/
+            width: 200px;
+            border: none;
+            outline: none;
+            height: 30px;
+        }
+        
+        img {
+            position: absolute;
+            top: 7px;
+            right: 2px;
+            width: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="password" name="" id="input">
+        <img src="images/钢铁侠.png" alt="" id="eye">
+    </div>
+    <script>
+        var eye = document.getElementById('eye');
+        var input = document.getElementById('input');
+        var flag = 0;
+        eye.onclick = function() {
+            if (flag == 0) {
+                input.type = 'text';
+                eye.src = "images/black.jpg";
+                flag = 1;
+            } else {
+                input.type = 'password';
+                eye.src = "images/钢铁侠.png";
+                flag = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>

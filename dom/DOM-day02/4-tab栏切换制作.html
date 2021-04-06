@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        .box {
+            width: 500px;
+            height: 400px;
+            margin: 100px auto;
+        }
+        
+        .tab_nav {
+            height: 34px;
+        }
+        
+        li {
+            padding: 5px 25px;
+            float: left;
+            border: 1px solid #ccc;
+            list-style: none;
+            cursor: pointer;
+            /* height: 23px; */
+        }
+        
+        .tab_cot {
+            height: 180px;
+        }
+        
+        .red {
+            background-color: red;
+        }
+        
+        .item {
+            display: none;
+        }
+        /* .item:nth-child(2) {
+            display: none;
+        }
+        
+        .item:nth-child(3) {
+            display: none;
+        }
+        
+        .item:nth-child(4) {
+            display: none;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="tab_nav">
+            <ul>
+                <li class="red">钢铁侠</li>
+                <li>奇异博士</li>
+                <li>黑豹</li>
+                <li>蜘蛛侠</li>
+            </ul>
+        </div>
+        <div class="tab_cot">
+            <div class="item" style="display: block;">钢铁侠内容</div>
+            <div class="item">奇异博士内容</div>
+            <div class="item">黑豹内容</div>
+            <div class="item">蜘蛛侠内容</div>
+        </div>
+    </div>
+    <script>
+        var lis = document.querySelectorAll('li');
+        var items = document.querySelectorAll('.item'); //第三步
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].setAttribute('index', i) //第二步
+            lis[i].onclick = function() {
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = '';
+                }
+                this.className = 'red';
+                var index = this.getAttribute('index'); //第二步
+                // console.log(index);
+                for (var i = 0; i < items.length; i++) {
+                    items[i].style.display = 'none'; //第四步
+                }
+                items[index].style.display = 'block'; //第三步
+            }
+        }
+    </script>
+</body>
+
+</html>

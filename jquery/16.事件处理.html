@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .current {
+            background-color: cyan;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <ul>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+    </ul>
+    <script>
+        $(function () {
+            //1.事件处理 On
+            //(1).on 可以绑定1个或者多个事件处理程序
+            // $("div").on({
+            //     mouseenter: function () {
+            //         $(this).css("background", "cyan");
+            //     },
+            //     click: function () {
+            //         $(this).css("background", "red");
+            //     },
+            //     mouseout: function () {
+            //         $(this).css("background", "skyblue");
+            //     }
+            // })
+            // $("div").on("mouseenter mouseleave", function () {
+            //     $(this).toggleClass("current");
+            // })
+
+            //(2).on 可以实现事件委托
+            $("ul").on("click", " li", function () {
+                $(this).css("background", "cyan");
+            }) //给 ul 绑定事件 但是触发对象是 ul 里的 li
+
+            //(3) on 还可以给动态创建的元素绑定事件
+            var li = $("<li>我是新的li</li>");
+            $("ul").append(li);
+        })
+    </script>
+</body>
+
+</html>

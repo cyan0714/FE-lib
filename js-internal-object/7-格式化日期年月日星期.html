@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var dates = date.getDate();
+        var day = date.getDay();
+        var hour = date.getHours();
+        hour = hour < 10 ? '0' + hour : hour;
+        var minute = date.getMinutes();
+        minute = minute < 10 ? '0' + minute : minute;
+        var second = date.getSeconds();
+        second = second < 10 ? '0' + second : second;
+        var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+        alert('今天是' + year + '年' + month + '月' + dates + '日 ' + arr[day] + hour + '点' + minute + '分' + second + '秒');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

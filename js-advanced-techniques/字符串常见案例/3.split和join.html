@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let str = 'c,s,y';
+    let arr = str.split(',');
+    console.log(arr); // 输出：["c", "s", "y"]
+    let str1 = arr.join('-')
+    console.log(str1); // 输出：c-s-y
+    let str2 = str1.replace('-', '*'); // 输出：c*s-y (replace 只能替换第一个匹配到的字符)
+    console.log(str2);
+    console.log(str2.repeat(3)); //输出： c*s-yc*s-yc*s-y
+  </script>
+</body>
+
+</html>

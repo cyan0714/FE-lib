@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 1.上下元素挨在一起 */
+
+    .div1 {
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+      border: 1px solid pink;
+    }
+
+    .div2 {
+      width: 200px;
+      height: 200px;
+      margin: 40px;
+      border: 1px solid skyblue;
+    }
+
+    /* 2.子元素包含在父元素之中 */
+
+    .div3 {
+      /* overflow: hidden;让 div3 生成 BFC 就可以避免外边距合并问题 */
+      width: 200px;
+      height: 200px;
+      margin: 200px;
+      background-color: pink;
+      overflow: hidden;
+      /* border: 1px solid pink; */
+    }
+
+    .div4 {
+      width: 100px;
+      height: 100px;
+      margin: 60px;
+      background-color: grey;
+      border: 1px solid skyblue;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 1.上下元素挨在一起 -->
+  <div class="div1"></div>
+  <div class="div2"></div>
+  <!-- 2.子元素包含在父元素之中 -->
+  <div class="div3">
+    <div class="div4"></div>
+  </div>
+  <!-- 如果父元素有上边框或上外边距，则不会发生外边距合并 -->
+</body>
+
+</html>

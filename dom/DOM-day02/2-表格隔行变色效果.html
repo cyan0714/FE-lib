@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        table {
+            width: 600px;
+            height: 250px;
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            /*设置成 border-collapse: collapse ，tr才可以有下边框*/
+            margin: auto;
+        }
+        
+        tr {
+            border-bottom: 1px solid pink;
+        }
+        
+        th {
+            font-weight: 400;
+            /* border-bottom: 1px solid #ccc; */
+            margin: 0;
+        }
+        
+        thead tr {
+            height: 50px;
+            background-color: pink;
+        }
+        
+        .bg {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>代码</th>
+                <th>名称</th>
+                <th>公布净值</th>
+                <th>累计净值</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var trs = document.querySelector('tbody').querySelectorAll('tr');
+        for (var i = 0; i < trs.length; i++) {
+            trs[i].onmouseover = function() {
+                this.className = 'bg';
+            }
+            trs[i].onmouseout = function() {
+                this.className = '';
+            }
+        }
+    </script>
+</body>
+
+</html>

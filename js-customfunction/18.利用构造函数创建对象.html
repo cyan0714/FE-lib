@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Hero(name, type, blood) {
+            this.name = name;
+            this.type = type;
+            this.blood = blood;
+            this.attack = function(method) {
+                // console.log(method);
+                return method;
+            }
+        }
+        var wuKong = new Hero('孙悟空', '战士型', 500);
+        console.log(wuKong); //输出wuKong这个对象的属性(没有方法)
+        console.log(wuKong.name); //孙悟空
+        console.log(wuKong.attack('近战')); //近战
+        console.log(wuKong.attack()); //undefined 
+        var aich = new Hero('艾希');
+        console.log(aich);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

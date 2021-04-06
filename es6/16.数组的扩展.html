@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //Array.from 可以把伪数组转换成真正的数组
+    let obj = {
+      '0': '0',
+      '1': '1',
+      '2': '2',
+      'length': 3
+    };
+    let arr = Array.from(obj, (item) => {
+      return item * 2
+    });
+    console.log(arr);
+    console.log(arr instanceof Array); //true
+    console.log(arr instanceof Object); //true
+
+    //find 方法(返回满足条件的对象)
+    let arr2 = [{
+      id: 1,
+      name: '张三'
+    }, {
+      id: 2,
+      name: '李四'
+    }];
+    let target = arr2.find((item) => {
+      return item.id == 2;
+    });
+    console.log(target); //{ id: 2,name: '李四'}
+
+    //findIndex 方法(返回满足条件的索引号)
+    let arr1 = [10, 20, 30];
+    let index = arr1.findIndex((item) => {
+      return item > 20;
+    });
+    console.log(index); //2
+  </script>
+</body>
+
+</html>

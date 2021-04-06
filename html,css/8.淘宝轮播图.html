@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .tb-prome {
+            position: relative;
+            margin: 100px auto;
+            width: 520px;
+            height: 280px;
+            background-color: pink;
+        }
+        
+        img {
+            width: 100%;
+            height: 280px;
+        }
+        
+        .left,
+        .right {
+            position: absolute;
+            top: 50%;
+            margin-top: -25px;
+            width: 28px;
+            height: 50px;
+            font-size: 16px;
+            line-height: 50px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        
+        .left {
+            left: 0px;
+            border-radius: 0 25px 25px 0;
+        }
+        
+        .right {
+            right: 0px;
+            border-radius: 25px 0 0 25px;
+        }
+        
+        .tb-prome a {
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        .tb-prome ul {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            margin-left: -35px;
+            width: 70px;
+            height: 13px;
+            /* background-color: pink; */
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 6.5px 6.5px 6.5px 6.5px;
+        }
+        
+        li {
+            float: left;
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            list-style: none;
+            border-radius: 4px;
+            margin: 3px;
+        }
+        
+        .first {
+            background-color: #ff5000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tb-prome">
+        <img src="images/tb.png" alt="">
+        <a href="#" class="left">&lt;</a>
+        <a href="#" class="right">&gt;</a>
+        <ul>
+            <li class="first"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+
+</html>

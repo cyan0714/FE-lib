@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let arr = ['张三', '李四', '王五'];
+    let [s1, ...s2] = arr;
+    console.log(s1); //张三
+    console.log(s2); //['李四','王五']
+    console.log(s2[0]); //'李四'
+  </script>
+</body>
+
+</html>

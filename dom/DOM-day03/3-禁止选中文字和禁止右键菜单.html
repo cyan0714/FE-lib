@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span>这一段禁用右键菜单</span>
+    <p>这一段禁止选中文字</p>
+</body>
+<script>
+    // document.addEventListener('contextmenu', function(e) {
+    //         e.preventDefault();
+    //     })
+    //1.禁用右键菜单
+    var span = document.querySelector('span');
+    span.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        })
+        //2.禁止选中文字
+    var p = document.querySelector('p');
+    p.addEventListener('selectstart', function(e) {
+        e.preventDefault();
+    })
+</script>
+
+</html>

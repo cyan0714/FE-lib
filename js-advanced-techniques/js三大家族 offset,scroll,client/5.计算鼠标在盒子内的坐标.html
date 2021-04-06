@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      margin: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    let div = document.querySelector('div');
+    div.addEventListener('click', function (e) {
+      let pageX = e.pageX;
+      let pageY = e.pageY;
+      let offsetLeft = div.offsetLeft;
+      let offsetTop = div.offsetTop;
+      let po = pageX - offsetLeft;
+      let po1 = pageY - offsetTop;
+      console.log(po);
+      console.log(po1);
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .nav {
+            position: relative;
+            width: 100%;
+            height: 70px;
+            background-color: green;
+        }
+        
+        .box {
+            overflow: hidden;
+            width: 800px;
+            height: 500px;
+            margin: 100px auto;
+            background-color: pink;
+        }
+        
+        .nav_left {
+            float: left;
+            height: 100%;
+        }
+        
+        .nav_left li {
+            position: relative;
+            list-style: none;
+            float: left;
+            /* padding: 20px 30px; */
+            height: 100%;
+            width: 100px;
+            background-color: red;
+            border: 1px solid #333;
+            text-align: center;
+            line-height: 70px;
+            margin-left: -1px;
+        }
+        
+        .close_nav {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #666;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+        }
+        
+        .nav_right {
+            /* float: right; */
+        }
+        
+        .nav_right .add_nav {
+            /* float: left; */
+            position: absolute;
+            top: 13px;
+            right: 0px;
+            width: 40px;
+            height: 40px;
+            background-color: blue;
+            text-align: center;
+            line-height: 40px;
+            font-size: 20px;
+        }
+        
+        section {
+            display: none;
+            padding: 50px 50px;
+            background-color: yellow;
+        }
+        
+        .sectionactive {
+            display: block;
+        }
+        
+        .nav_left .liactive {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box" id="tab">
+        <div class="nav">
+            <ul class="nav_left">
+                <li class="liactive"><span>模块1</span><span class="close_nav">x</span></li>
+                <li><span>模块2</span><span class="close_nav">x</span></li>
+                <li><span>模块3</span><span class="close_nav">x</span></li>
+            </ul>
+            <div class="nav_right">
+                <span class="add_nav">+</span>
+            </div>
+        </div>
+        <div class="content">
+            <section class="sectionactive">模块内容1</section>
+            <section>模块内容2</section>
+            <section>模块内容3</section>
+        </div>
+    </div>
+
+    <script src="tab.js"></script>
+</body>
+
+</html>

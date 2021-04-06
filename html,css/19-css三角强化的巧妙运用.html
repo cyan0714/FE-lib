@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 0;
+            height: 0;
+            /* 1.只保留右边的边框有颜色 */
+            border-color: transparent red transparent transparent;
+            /* 2.样式都是solid */
+            border-style: solid;
+            /* 3.上边框要大,右边框小,下和左为0 */
+            border-width: 200px 100px 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

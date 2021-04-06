@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //数组解构
+    let arr = [1, 2, 3, 4];
+    let [a, b, c, d] = arr;
+    console.log(b); //2
+
+    //对象解构
+    let obj = {
+      name: 'csy',
+      age: 21,
+      sex: '男'
+    }
+    let {
+      name,
+      age,
+      sex
+    } = obj;
+    console.log(name); //csy
+    console.log(age); //21
+    console.log(sex); //男
+    //或者
+    let obj1 = {
+      name: 'csy',
+      age: 21,
+      sex: '男'
+    }
+    let {
+      name: myName,
+      sex: mySex,
+      age: myAge,
+    } = obj;
+    console.log(myName); //csy
+    console.log(myAge); //21
+    console.log(mySex); //男
+
+    //当对一个已经定义的变量进行解构时会报错
+    // let foo = 'hehe';
+    // {foo} = {foo: 'haha'} //当去掉注释时，等号下面有红色波浪线(报警警告)，加个圆括号就行
+
+
+    //数组和对象的合并解构
+    // let arr = [1, 2, 3, 4];
+    // let {
+    //   0: first,
+    //   1: second,
+    //   [arr.length - 1]: last
+    // } = arr;
+    // console.log(first); //1
+    // console.log(second); //2
+    // console.log(last); //4
+  </script>
+</body>
+
+</html>

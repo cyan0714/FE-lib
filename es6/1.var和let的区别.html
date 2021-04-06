@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = [];
+        for (var i = 0; i < 10; i++) {
+            a[i] = function() {
+                console.log(i);
+            }
+        }
+        a[6](); //10
+        // 上面代码中，i是用var声明的，i全局有效且只有1个，每循环一次，i就会改变，当函数执行时，i输出的是最后一轮循环的i，即是10
+
+        var a = [];
+        for (let i = 0; i < 10; i++) {
+            a[i] = function() {
+                console.log(i);
+            }
+        }
+        a[6](); //6
+        //上面代码中，i是用let声明的，每一轮都有一个新的i，所以每一轮i都是一个新的变量，且只在本轮有效
+
+        for (let i = 0; i < 3; i++) {
+            let i = 'abc';
+            console.log(i);
+        }
+        //abc
+        //abc
+        //abc
+        //上面代码中，循环语句和循环体是分离的，循环语句部分是父级作用域，循环体部分是一个单独的子级作用域
+    </script>
+</body>
+
+</html>

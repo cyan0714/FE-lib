@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = ['red', 'green', 'blue'];
+        var flag = arr.some(function(value) {
+            return value == 'red';
+        })
+        console.log(flag);
+        //1.some 是查找数组中满足条件的元素是否存在，返回的是一个布尔值，并且效率高，如果找到第一个满足条件的元素就终止循环
+        //2.filter 也是查找满足条件的元素，返回的是一个数组，而且是把所有满足条件的元素返回回来
+    </script>
+</body>
+
+</html>

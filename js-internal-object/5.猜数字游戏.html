@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var rdm = function(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        var rdmresult = rdm(1, 50)
+        console.log(rdmresult);
+
+        // while (true) {
+        //     var x = prompt('请输入一个数');
+        //     if (x > rdm) {
+        //         alert('你的数大了');
+        //     } else if (x < rdm) {
+        //         alert('你的数小了');
+        //     } else {
+        //         alert('恭喜你，猜对了');
+        //         break;
+        //     }
+        // }
+        for (var i = 10; i >= 1; i--) {
+            var y = prompt('请输入一个数');
+            if (y > rdmresult) {
+                alert('你的数大了');
+            } else if (y < rdmresult) {
+                alert('你的数小了');
+            } else if (y == rdmresult) {
+                alert('恭喜你，猜对了');
+                break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

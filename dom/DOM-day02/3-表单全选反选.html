@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            margin: auto;
+            width: 560px;
+            height: 250px;
+            text-align: center;
+            border-collapse: collapse;
+        }
+        
+        thead {
+            background-color: skyblue;
+        }
+        
+        tr {
+            border-bottom: 1px solid #ccc;
+        }
+        
+        input {
+            width: 20px;
+            height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>
+                    全选<input type="checkbox" id="j_cbAll">
+                </td>
+                <td>商品</td>
+                <td>价格</td>
+            </tr>
+        </thead>
+        <tbody id="j_tb">
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>iphone X</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>iphone 8</td>
+                <td>7000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>iphone 7</td>
+                <td>6000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>iphone 6</td>
+                <td>5000</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var j_cbAll = document.getElementById('j_cbAll');
+        var j_tbs = document.getElementById('j_tb').getElementsByTagName('input');
+        j_cbAll.onclick = function() {
+            // console.log(this.checked);
+            for (var i = 0; i < j_tbs.length; i++) {
+                j_tbs[i].checked = this.checked;
+            }
+        }
+
+        for (var i = 0; i < j_tbs.length; i++) {
+
+            j_tbs[i].onclick = function() {
+                flag = true;
+                //每次点击复选框都要循环检查这4个小按钮是否被选中
+                for (var i = 0; i < j_tbs.length; i++) {
+                    if (!j_tbs[i].checked) { //只要有一个没被选上就执行下面的语句
+                        flag = false;
+                        break;
+                    }
+                }
+                j_cbAll.checked = flag;
+            }
+        }
+    </script>
+</body>
+
+</html>

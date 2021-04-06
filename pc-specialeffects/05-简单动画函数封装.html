@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        
+        span {
+            position: absolute;
+            display: block;
+            top: 200px;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn500">点击我span走500</button>
+    <button class="btn800">点击我span走800</button>
+    <div>走慢点</div>
+    <span>我在前面等你</span>
+    <script>
+        // var divLeft=div.offsetLeft;
+
+        function animate(obj, target, callback) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function() {
+                //步长值写到定时器里
+                //把步长值改为整数 不要出现小数的问题
+                // var step=Math.ceil((target-obj.offsetLeft)/10);
+                var step = (target - obj.offsetLeft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                obj.style.left = obj.offsetLeft + step + 'px';
+                if (obj.offsetLeft == target) { //也可以改成大于等于，但是没必要
+                    clearInterval(obj.timer);
+                    if (callback) {
+                        callback();
+                    }
+                }
+
+            }, 15);
+        }
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        var btn500 = document.querySelector('.btn500');
+        var btn800 = document.querySelector('.btn800');
+
+        animate(div, 300);
+        btn500.addEventListener('click', function() {
+            animate(span, 500);
+        })
+        btn800.addEventListener('click', function() {
+                animate(span, 800, function() {
+                    span.style.backgroundColor = 'red';
+                });
+            })
+            //匀速动画 就是 盒子当前位置 + 固定的值
+            //缓动动画 就是 盒子当前位置 + 变化的值((目标值 - 现在的位置)/10)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            margin: 0 auto;
+        }
+        
+        img {
+            display: block;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button id="ironman">钢铁侠</button>
+        <button id="panther">黑豹</button>
+        <img src="images/钢铁侠.png" alt="" title="ironman">
+    </div>
+
+    <script>
+        var ironman = document.getElementById('ironman');
+        var pant = document.getElementById('panther');
+        var img = document.querySelector('img');
+        pant.onclick = function() {
+            img.src = 'images/black.jpg';
+            img.title = 'panther';
+        }
+        ironman.onclick = function() {
+            img.src = 'images/钢铁侠.png';
+            img.title = 'ironman';
+        }
+    </script>
+</body>
+
+</html>

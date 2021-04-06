@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 150px;
+            height: 30px;
+            background-color: red;
+            /* 1.不换行，强行都在一行显示 */
+            white-space: nowrap;
+            /* 2.溢出隐藏 */
+            overflow: hidden;
+            /* 3.溢出隐藏部分用省略号表示 */
+            text-overflow: ellipsis;
+            line-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        啥也不说，此处省略一万字
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Stack() {
+            this.items = [];
+            Stack.prototype.push = function(element) {
+                this.items.push(element);
+            }
+            Stack.prototype.pop = function() {
+                return this.items.pop();
+            }
+            Stack.prototype.peek = function() {
+                return this.items[this.items.length - 1];
+            }
+            Stack.prototype.isEmpty = function() {
+                return this.items.length == 0;
+            }
+            Stack.prototype.size = function() {
+                return this.items.length;
+            }
+            Stack.prototype.toString = function() {
+                // return toString(this.items);
+                var resultString = '';
+                for (var i = 0; i < this.items.length; i++) {
+                    resultString += this.items[i] + '!';
+                }
+                return resultString;
+            }
+        }
+        var stack = new Stack();
+        stack.push(7);
+        stack.push(14);
+        stack.push(38);
+        console.log(stack);
+        console.log(stack.toString());
+
+        function dec2ejz(cs) {
+            var dec = new Stack();
+            while (cs > 0) {
+                dec.push(cs % 2)
+                cs = Math.floor(cs / 2)
+            }
+            var binString = '';
+            while (!dec.isEmpty()) {
+                binString += dec.pop();
+            }
+            return binString;
+        }
+        // dec2ejz(100);
+        console.log(dec2ejz(10));
+        // function Stack() {
+        //     this.items = [];
+        //     Stack.prototype.push = function(element) {
+        //         this.items.push(element);
+        //     }
+        //     Stack.prototype.pop = function() {
+        //         return this.items.pop()
+        //     }
+        //     Stack.prototype.peek = function() {
+        //         return this.items[this.items.length - 1]
+        //     }
+        //     Stack.prototype.isEmpty = function() {
+        //         return this.items.length == 0
+        //     }
+        //     Stack.prototype.size = function() {
+        //             return this.items.length
+        //         }
+        // Stack.prototype.toString = function() {
+        //     var resultString = '!';
+        //     for (var i = 0; i < this.items.length; i++) {
+        //         resultString += this.items[i] + '   ';
+        //     }
+        //     return resultString;
+        // }
+        // }
+        // var s = new Stack()
+        // s.push(20);
+        // s.push(210)
+        // s.push(230)
+        // s.push(240)
+        // alert(s)
+        // console.log(s);
+        // s.pop()
+        // s.pop()
+        // alert(s)
+        // alert(s.peek())
+        // alert(s.isEmpty())
+        // alert(s.size())
+        // function dec2bin(decNumber) {
+        //     var s = new Stack()
+        //     while (decNumber > 0) {
+        //         s.push(decNumber % 2);
+        //         decNumber = Math.floor(decNumber / 2);
+        //     }
+        //     var binString = '';
+        //     while (!s.isEmpty()) {
+        //         binString += s.pop();
+        //     }
+        //     return binString;
+        // }
+        // alert(dec2bin(100));
+    </script>
+</body>
+
+</html>

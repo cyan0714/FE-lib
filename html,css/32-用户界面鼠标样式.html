@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    ul {
+        /* FF下，ul有默认的 padding-left:40px 和默认的 margin-top:16px; */
+        width: 200px;
+        height: 500px;
+        /* margin: 0; */
+        /* padding: 0; */
+        background-color: red;
+        border: 1px solid black;
+    }
+    
+    ul li {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        font-size: 14px;
+        text-align: center;
+        list-style: none;
+        margin-left: 0;
+    }
+</style>
+
+<body>
+    <ul>
+        <li style="cursor: default;">这是默认样式</li>
+        <li style="cursor: pointer;">这是小手样式</li>
+        <li style="cursor: move;">这是移动样式</li>
+        <li style="cursor: text;">这是文本样式</li>
+        <li style="cursor: not-allowed;">这是禁止样式</li>
+    </ul>
+</body>
+
+</html>

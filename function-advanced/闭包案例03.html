@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //打车问题
+        //起步价 13 元(3公里以内)，之后每超过1公里，加5块钱
+        //若有拥堵，则加10元
+        var car = (function() {
+            var start = 13;
+            var total = 0;
+            return {
+                //正常价格
+                price: function(n) {
+                    if (n <= 3) {
+                        total = start;
+                    } else {
+                        total = start + (n - 3) * 5;
+                    }
+                    return total
+                },
+                //拥堵后的费用
+                yd: function(flag) {
+                    return flag ? total + 10 : total;
+                }
+            }
+
+        })();
+        console.log(car.price(5));
+        console.log(car.price(3));
+        console.log(car.yd(true));
+        console.log(car.price(4), car.yd(false));
+    </script>
+</body>
+
+</html>

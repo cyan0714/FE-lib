@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let str = 'cyyaaannnn';
+    let obj = {};
+    for (let i = 0; i < str.length; i++) {
+      let key = str[i];
+      if (obj[key] === undefined) {
+        obj[key] = 1;
+      } else {
+        obj[key] += 1;
+      }
+    }
+    console.log(obj);
+    console.log('--------------------');
+    let maxKey = '';
+    let maxCount = 0;
+    for (let k in obj) {
+      if (obj[k] > maxCount) {
+        maxCount = obj[k];
+        maxKey = k
+      }
+    }
+    console.log(maxKey);
+    console.log(maxCount);
+  </script>
+</body>
+
+</html>

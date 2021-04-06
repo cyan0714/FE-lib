@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <script>
+        // var targetObj = {
+        //     name: "cxy",
+        //     height: 178,
+        //     have: {
+        //         money: 98
+        //     }
+        // };
+        // var obj = {
+        //     name: "csy",
+        //     age: 18,
+        //     have: {
+        //         money: 100
+        //     }
+        // }
+        // $.extend(true,targetObj, obj);
+        // console.log(
+        //     targetObj); //浅拷贝：如果被拷贝目标(obj)里的属性拷贝目标(targetObj)也有，则会覆盖掉相同的属性，并且如果将拷贝目标里复杂数据类型的值修改后，被拷贝目标里的复杂数据类型的值也会改变
+        // targetObj.have.money = 200;
+        // console.log(obj); //深拷贝：不会改变被拷贝的目标(obj)里的值
+        //**********************************
+        // var obj = {
+        //     name: "a"
+        // };
+
+        // var obj1 = obj;
+
+        // // obj = {
+        // //     name: "b"
+        // // };
+        // obj.name = "b";
+        // console.log(obj1.name);
+        //************************************
+        // Person.prototype.name = "sunny";
+
+        // function Person() {
+
+        // }
+        // var person = new Person();
+        // Person.prototype = {
+        //     name: "cherry"
+        // }
+
+        // console.log(person.name);
+        //*************************************
+        // Person.prototype = {
+        //     toString: function () {
+        //         return "hehe"
+        //     }
+        // }
+
+        // function Person() {
+
+        // }
+        // var person = new Person()
+        //********************************
+        // var num = 123;
+        // var num = new Number(123);
+        var obj = {
+            name: "csy",
+            age: 18,
+        }
+
+        // num.abc = "a";
+        // console.log(num.abc);
+    </script>
+</body>
+
+</html>

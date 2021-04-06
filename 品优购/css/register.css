@@ -1,0 +1,170 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?oe0xpr');
+    src: url('../fonts/icomoon.eot?oe0xpr#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?oe0xpr') format('truetype'), url('../fonts/icomoon.woff?oe0xpr') format('woff'), url('../fonts/icomoon.svg?oe0xpr#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+.w {
+    width: 1200px;
+    margin: auto;
+}
+
+header {
+    height: 84px;
+    background-color: pink;
+    border-bottom: 2px solid #b1191a;
+}
+
+header img {
+    margin-top: 16px;
+}
+
+.register {
+    height: 520px;
+    border: 1px solid #dfdfdf;
+    margin-top: 25px;
+}
+
+.register h3 {
+    height: 40px;
+    background-color: #ececec;
+    line-height: 40px;
+    padding: 0 10px;
+}
+
+.register h3 .left {
+    float: left;
+    font-size: 18px;
+    /* padding-left: 10px; */
+}
+
+.register h3 .right {
+    float: right;
+    font-size: 14px;
+}
+
+.register h3 .right a {
+    color: #c81623;
+}
+
+
+/* .reg_form {
+    width: 100%;
+    height: 480px;
+    background-color: skyblue;
+    padding-top: 50px;
+    text-align: center;
+} */
+
+.reg_form {
+    width: 600px;
+    /* height: 378px; */
+    margin: 30px auto 0px;
+    /* text-align: center; */
+}
+
+.reg_form ul li {
+    margin-bottom: 20px;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    font-size: 14px;
+    color: #4d4d4d;
+    margin-right: 7px;
+}
+
+ul li input {
+    height: 40px;
+    width: 242px;
+    border: 1px solid #cccd;
+}
+
+.reg_form .error {
+    /* font-size: 22px; */
+    /* line-height: 70px; */
+    color: red;
+}
+
+.reg_form .error::before {
+    content: '';
+    font-family: 'icomoon';
+    font-size: 15px;
+    /* color: red; */
+    /* font-size: 12px; */
+}
+
+.reg_form .success {
+    color: seagreen;
+}
+
+.reg_form .success::before {
+    font-family: 'icomoon';
+    content: '';
+    font-size: 15px;
+}
+
+.reg_form ul li em {
+    padding: 0 14px;
+}
+
+.safe {
+    padding-left: 170px;
+    padding-top: 7px;
+}
+
+.ruo {
+    background-color: #de1111;
+}
+
+.zhong {
+    background-color: #40b83f;
+}
+
+.qiang {
+    background-color: #f79100;
+}
+
+.reg_form p {
+    margin-left: 120px;
+}
+
+.reg_form p .read {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+}
+
+.reg_form p a {
+    color: #1ba1e6;
+}
+
+.finish {
+    width: 200px;
+    height: 35px;
+    background-color: #c81623;
+    text-align: center;
+    margin: 50px 0 0 400px;
+    font-size: 18px;
+    color: #fff;
+    line-height: 35px;
+}
+
+.finish a {
+    color: #fff;
+}
+
+.about {
+    text-align: center;
+    font-size: 14px;
+}
+
+.address {
+    text-align: center;
+    margin-top: 10px;
+}

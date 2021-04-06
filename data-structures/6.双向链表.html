@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function doublyLinedList() {
+            function Node(date) {
+                this.date = date;
+                this.prev = null;
+                this.next = null;
+            }
+            this.head = null;
+            this.tail = null;
+            this.length = 0;
+
+            //1.append方法
+            doublyLinedList.prototype.append = function(date) {
+                var newNode = new Node(date);
+                if (this.length == 0) {
+                    this.head = newNode;
+                    this.tail = newNode;
+                } else {
+                    newNode.prev = this.tail;
+                    this.tail.next = newNode;
+                    this.tail = newNode
+                }
+                this.length += 1;
+            }
+
+            //2.toString方法，将链表从前往后输出
+            doublyLinedList.prototype.toString = function() {
+                var resultString = '';
+                var current = this.head;
+                while (current) {
+                    resultString += current.date + ' ';
+                    current = current.next;
+                }
+                return resultString;
+            }
+
+            //2.forwardString方法，将链表从后往前输出
+            doublyLinedList.prototype.forwardString = function() {
+                var resultString = '';
+                var current = this.tail;
+                while (current) {
+                    resultString += current.date + ' ';
+                    current = current.prev;
+                }
+                return resultString;
+            }
+
+            //3.insert 方法
+            doublyLinedList.prototype.insert = function(position, date) {
+                var newNode = new Node(date);
+                if (position < 0 || position > this.length) {
+                    return false;
+                } else {
+                    if (position == 0) {
+                        this.head = newNode;
+                        this.tail = newNode;
+                    } else if (position == this.length) {
+                        newNode.prev = this.tail;
+                        this.tail.next = newNode;
+                        this.tail = newNode;
+                    } else {
+                        var current = this.head;
+                        var index = 0;
+
+                        while (index++ < position) {
+                            current = current.next
+                        }
+
+                        //修改指针
+                        newNode.next = current;
+                        newNode.prev = current.prev;
+                        current.prev.next = newNode;
+                        current.prev = newNode;
+                    }
+                }
+                this.length += 1;
+            }
+
+            //4.get方法
+            doublyLinedList.prototype.get = function(position) {
+                    if (position < 0 || position >= this.length) {
+                        return null;
+                    }
+                    var current = this.head;
+                    var index = 0;
+                    while (index++ < position) {
+                        current = current.next;
+                    }
+                    return current.date;
+                }
+                //5.indexOf方法
+            doublyLinedList.prototype.indexOf = function(date) {
+                var index = 0
+                var current = this.head;
+                while (current) {
+                    if (current.date == date) {
+                        return index;
+                    }
+                    current = current.next;
+                    index += 1;
+
+                }
+                return -1;
+            }
+
+            //6.update 方法
+            doublyLinedList.prototype.update = function(position, newDate) {
+                if (position < 0 || position >= this.length) {
+                    return false;
+                }
+                var current = this.head;
+                var index = 0;
+                while (index++ < position) {
+                    current = current.next;
+                }
+                current.date = newDate;
+                return true;
+            }
+
+            //7.removeAt 方法
+            doublyLinedList.prototype.removeAt = function(position) {
+                if (position < 0 || position >= this.length) {
+                    return null;
+                }
+                var current = this.head;
+                if (this.length == 1) {
+                    this.head = null;
+                    this.tail = null;
+                } else {
+                    if (position == 0) {
+                        this.head.next.prev = null;
+                        this.head = this.head.next;
+                    } else if (position == this.length - 1) {
+                        current = this.tail;
+                        this.tail.prev.next = null;
+                        this.tail = this.tail.prev;
+                    } else {
+                        var index = 0;
+                        while (index++ < position) {
+                            current = current.next;
+                        }
+                        current.prev.next = current.next;
+                        current.next.prev = current.prev;
+                    }
+                }
+                length += 1;
+                return current.date;
+            }
+
+            //8.remove 方法
+            doublyLinedList.prototype.remove = function(date) {
+                var index = this.indexOf(date);
+                return this.removeAt(index);
+            }
+        }
+        var list = new doublyLinedList();
+        list.append('111');
+        list.append('222');
+        list.append('333');
+        alert(list.toString());
+        alert(list.forwardString());
+        list.insert('2', '444');
+        list.insert('4', '555');
+        alert(list);
+        alert(list.get(0));
+        alert(list.get(2));
+        alert(list.indexOf('555'));
+        list.update(0, '777');
+        list.update(1, '888');
+        alert(list);
+        alert(list.removeAt(0));
+        alert(list);
+        alert(list.removeAt(1));
+        alert(list);
+        alert(list.remove('333'));
+        alert(list);
+
+
+        // console.log(list);
+    </script>
+</body>
+
+</html>

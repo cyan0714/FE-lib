@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var regexp = /^[0-9]$/;
+    // /1/只要包含1这个数字，返回的都是true
+    console.log(regexp.test(2));
+    console.log(regexp.test(1234));
+    console.log(regexp.test('abs'));
+    console.log('------------------------------');
+    var rex = /abc/;
+    // 字符串中的 abc必须要连起来才是true
+    console.log(rex.test('abacc'));
+    console.log('------------------------------');
+    var rg = /^abc/;
+    // 以abc开头的都是true
+    console.log(rg.test('abc'));
+    console.log(rg.test('abcd'));
+    console.log(rg.test('abbcc'));
+    console.log('------------------------------');
+    var rg1 = /^abc$/;
+    //必须是 abc 字符串才符合规范
+    console.log(rg1.test('abc'));
+    console.log(rg1.test('abcd'));
+    console.log(rg1.test('abbcc'));
+    console.log(rg1.test('abcabc'));
+    console.log('------------------------------');
+    var rg2 = /^[a-zA-Z0-9_-]{6,16}$/
+    console.log(rg2.test('aaa345'));
+  </script>
+</body>
+
+</html>

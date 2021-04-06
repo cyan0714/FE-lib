@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <script>
+        function rdm(min, max) { //可以同时取到min或者max
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        var rdms = function(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        console.log(rdm(1, 10));
+        console.log(rdms(1, 10));
+
+        //点名
+        var arr = ['关羽', '张飞', '刘备'];
+        console.log(arr[rdms(0, arr.length - 1)]);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.return后面代码不会被执行
+        //2.return只返回一个值，但是 可以使用数组来让它返回多个值，如：下求任意两个数的加减乘除的结果
+        function getSum(num1, num2) {
+            return [parseInt(num1) + parseInt(num2), num1 - num2, num1 * num2, num1 / num2, ]
+        }
+        var num1 = prompt('请输入第一个数：');
+        var num2 = prompt('请输入第二个数：')
+        var re = getSum(num1, num2); //返回的是一个数组
+        console.log(re);
+        //3.函数没有return或是return后面没有值，则返回undefined
+        function fun1() {
+            return
+        }
+        console.log(fun1());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

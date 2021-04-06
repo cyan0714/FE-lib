@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            list-style: none;
+        }
+
+        .weibo {
+            position: relative;
+            width: 850px;
+
+            margin: 100px auto;
+            border: 1px solid #666;
+        }
+
+        .contend {
+            width: 600px;
+            height: 200px;
+            margin: 10px auto;
+            padding-bottom: 10px;
+        }
+
+        button {
+            position: absolute;
+            top: 208px;
+            right: 90px;
+
+        }
+
+        ul li {
+            display: none;
+            border-bottom: 1px dashed #999;
+            width: 600px;
+            margin: 5px auto;
+
+        }
+
+        /* a {
+            position: absolute;
+            top: 240px;
+            right: 90px;
+        } */
+
+        textarea {
+            width: 100%;
+            height: 100%;
+            /* border: none; */
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="weibo">
+        微博发布
+        <div class="contend">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
+        <button>发布</button>
+        <ul>
+        </ul>
+    </div>
+    <script>
+        $(function () {
+            $("button").on("click", function () {
+                var li = $("<li></li>");
+                li.html($("textarea").val() + "<a href='javascript:;'> 删除</a>");
+                $("ul").prepend(li);
+                li.slideDown(); //给 li 加 display:none 才有效
+                $("textarea").val("");
+            })
+            $("ul").on("click", "a", function () {
+                $(this).parent().slideUp(function () {
+                    $(this).remove();
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

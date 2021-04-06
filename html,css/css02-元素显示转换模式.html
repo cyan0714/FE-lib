@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 行内元素转化为块级元素 */
+        
+        a {
+            display: block;
+            width: 140px;
+            height: 70px;
+            background-color: yellow;
+        }
+        /* 鼠标悬停在链接上时的状态 */
+        
+        a:hover {
+            color: skyblue;
+        }
+        /* 行内元素转化为行内块元素 */
+        
+        span {
+            display: inline-block;
+            background-color: red;
+            width: 140px;
+            height: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">xxxxxxx</a>
+    <span>xxx</span>
+    <span>ooo</span>
+</body>
+
+</html>

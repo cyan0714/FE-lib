@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="tx">
+    <input type="checkbox" id="ckbx">记住用户名
+    <script>
+        var tx = document.querySelector('#tx');
+        var ckbx = document.querySelector('#ckbx');
+        if (localStorage.getItem('tx')) {
+            tx.value = localStorage.getItem('tx');
+            ckbx.checked = true;
+        }
+        ckbx.addEventListener('change', function() {
+            if (this.checked) {
+                localStorage.setItem('tx', tx.value)
+            } else {
+                localStorage.removeItem('tx');
+            }
+        })
+    </script>
+</body>
+
+</html>

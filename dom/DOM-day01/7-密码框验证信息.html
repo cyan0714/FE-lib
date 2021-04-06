@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        .box {
+            width: 400px;
+            margin: 100px auto;
+            /* border: 1px solid #ccc; */
+        }
+        
+        input {
+            height: 40px;
+            outline: none;
+            font-size: 20px;
+            /* border: 0; */
+        }
+        
+        p {
+            display: inline-block;
+            height: 40px;
+            color: #ccc;
+            /* text-align: center; */
+            line-height: 40px;
+            /* padding-left: 20px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="password" class="input" value="">
+        <p class="text">请输入6~16位密码</p>
+    </div>
+    <script>
+        var input = document.querySelector('input');
+        var text = document.querySelector('p')
+        input.onblur = function() {
+            if (this.value.length < 6 || this.value.length > 16) {
+                text.innerHTML = "您的格式不正确";
+                text.style.color = 'red';
+            } else {
+                text.innerHTML = '格式正确';
+                text.style.color = 'green';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 0;
+            height: 0;
+            border-top: 50px solid pink;
+            border-right: 50px solid yellow;
+            border-bottom: 50px solid blue;
+            border-left: 50px solid red;
+            margin: auto;
+        }
+        
+        .box1 {
+            width: 0;
+            height: 0;
+            border: 50px solid transparent;
+            border-left: 50px solid pink;
+            margin: auto;
+        }
+        /* <!-- css三角应用-小米案例 --> */
+        
+        .mi {
+            position: relative;
+            width: 150px;
+            height: 300px;
+            background-color: pink;
+            margin: auto;
+        }
+        
+        .triangle {
+            position: absolute;
+            right: -40px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            /* background-color: skyblue; */
+            border: 20px solid transparent;
+            border-left: 20px solid pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="box1"></div>
+    <!-- css三角应用-小米案例 -->
+    <div class="mi">
+        <div class="triangle"></div>
+    </div>
+</body>
+
+</html>

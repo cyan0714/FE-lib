@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //第一种场景，内层变量可能会覆盖外城变量
+    var tmp = new Date();
+
+    function f() {
+      console.log(tmp);
+      if (false) {
+        var tmp = 'hello';
+      }
+    }
+    f(); //undefined,if里的tmp变量提升
+
+    //第二种场景，用来计数的循环变量泄露变为全局变量
+    var s = 'hello'
+    for (var i = 0; i < s.length; i++) {
+      console.log(s[i]);
+      console.log(i);
+    }
+    //上面代码中，变量i只用来控制循环，但是循环结束后，他并没有消失，反而变成了全局变量
+  </script>
+</body>
+
+</html>

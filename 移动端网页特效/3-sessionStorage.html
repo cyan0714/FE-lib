@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" value="">
+    <button id="set">存储数据</button>
+    <button id="get">获取数据</button>
+    <button id="remove">删除数据</button>
+    <button id="clear">清空所有数据数据</button>
+    <script>
+        var input = document.querySelector('input');
+        var set = document.querySelector('#set');
+        var get = document.querySelector('#get');
+        var remove = document.querySelector('#remove');
+        var clear = document.querySelector('#clear');
+        set.addEventListener('click', function() {
+            var ipt = input.value;
+            sessionStorage.setItem('user1', ipt);
+            sessionStorage.setItem('user2', ipt);
+        });
+        get.addEventListener('click', function() {
+            sessionStorage.getItem('user1');
+            console.log(sessionStorage.getItem('user'));
+        });
+        remove.addEventListener('click', function() {
+            sessionStorage.removeItem('user1');
+        })
+        clear.addEventListener('click', function() {
+            sessionStorage.clear()
+        })
+    </script>
+</body>
+
+</html>

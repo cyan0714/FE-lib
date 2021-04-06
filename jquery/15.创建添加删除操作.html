@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>我是原来的li</li>
+    </ul>
+    <div>我是原来的div</div>
+    <script>
+        $(function () {
+            var newLi = $("<li>新的li</li>");
+            // $('ul').append(newLi);//放在后面
+            // $('ul').prepend(newLi);//放在前面
+            var newDiv = $('<div>新的div</div>');
+            // $("div").after(newDiv);
+            // $("div").before(newDiv);
+            // $("ul").remove();//把 ul 标签和里面的内容都删了
+            // $("ul").empty();//ul标签里面的子节点都删了
+            $("ul").html(''); //和 empty 一样
+
+        })
+    </script>
+</body>
+
+</html>

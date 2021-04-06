@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    form {
+      width: 100%;
+      /* 最大宽度*/
+      max-width: 640px;
+      /* 最小宽度*/
+      min-width: 320px;
+      margin: 0 auto;
+      font-family: "Microsoft Yahei";
+      font-size: 20px;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      height: 30px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- placeholder 占位符（提示文字）
+
+  autofocus 自动获取焦点
+  
+  multiple 文件上传多选或多个邮箱地址
+  
+  autocomplete 自动完成（填充的）。on 开启（默认），off 取消。用于表单元素，也可用于表单自身(on/off)
+  
+  form 指定表单项属于哪个form，处理复杂表单时会需要
+  
+  novalidate 关闭默认的验证功能（只能加给form）
+  
+  required 表示必填项
+  
+  pattern 自定义正则，验证表单。 -->
+  <form action="">
+    <fieldset>
+      <legend>表单属性</legend>
+      <label for="">
+        用户名：<input type="text" placeholder="例如：smyhvae" name="userName" autocomplete="on" required />
+      </label>
+
+      <label for="">
+        电话：<input type="tel" pattern="1\d{10}" />
+      </label>
+
+      <label for="">
+        multiple的表单: <input type="file" multiple>
+      </label>
+
+      <!-- 上传文件-->
+      <input type="file" name="file" multiple />
+
+      <input type="submit" />
+    </fieldset>
+  </form>
+
+</body>
+
+</html>

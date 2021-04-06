@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .box {
+            position: relative;
+            width: 210px;
+            height: 30px;
+            border: 1px solid red;
+            line-height: 30px;
+            text-align: center;
+            margin: 100px auto;
+            /* background-color: red; */
+        }
+        
+        .left,
+        .right {
+            float: left;
+            width: 105px;
+            height: 30px;
+        }
+        
+        .left {
+            background-color: red;
+            color: #fff;
+            font-weight: 700;
+        }
+        
+        .right {
+            background-color: #fff;
+            font-size: 14px;
+            color: #999;
+            /* border-bottom: 10px solid yellow; */
+        }
+        
+        .box1 {
+            position: absolute;
+            right: 50%;
+            top: 0;
+            width: 0;
+            height: 0;
+            /* 1.只保留右边的边框有颜色 */
+            border-color: transparent #fff transparent transparent;
+            /* 2.样式都是solid */
+            border-style: solid;
+            /* 3.上边框要大,右边框小,下和左为0 */
+            border-width: 30px 15px 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="left">$49.00</div>
+        <div class="right"><del>$99.00</del></div>
+        <div class="box1"></div>
+    </div>
+</body>
+
+</html>

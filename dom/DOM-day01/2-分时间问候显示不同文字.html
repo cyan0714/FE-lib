@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <p>
+        我是P
+        <span>我是span</span>
+    </p>
+    <script>
+        var div = document.querySelector('div');
+        var date = new Date();
+        var h = date.getHours();
+        if (h < 12) {
+            div.innerText = '上午好';
+        } else if (h < 18) {
+            div.innerText = '下午好<strong>下午好</strong>'; //显示为：下午好<strong>下午好</strong>   若为innerHTML则显示为:下午好和加粗的下午好
+        } else {
+            div.innerHTML = '晚上好<strong>晚上好呀</strong>'; //显示为:晚上好和加粗的晚上好
+        }
+        var p = document.querySelector('p');
+        console.log(p.innerText);
+        console.log(p.innerHTML);
+    </script>
+</body>
+
+</html>

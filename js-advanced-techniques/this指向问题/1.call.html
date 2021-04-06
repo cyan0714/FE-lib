@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let name = 'cxy';
+    let obj = {
+      name: "csy",
+      age: 18,
+    };
+
+    function foo() {
+      console.log(this);
+      console.log(this.name); // 显示为空，若将 let 改为 var 则显示 cxy
+    }
+
+    foo();
+    foo.call(obj); // 让 foo 里的 this 指向括号里的 obj
+
+    //通过 call 实现继承
+    // function Father(myName, myAge) {
+    //   this.name = myName;
+    //   this.age = myAge;
+    // }
+
+    // function Son(myName1, myAge1) {
+    //   Father.call(this, myName1, myAge1) //先让 Father 里的 this 指向 Son 的 this,然后 Son 就可以继承 Father 的属性了
+    // }
+    // let son = new Son('cyan', 18)
+    // console.log(son);
+
+    function Teacher(myName, myAge) {
+      this.name = myName;
+      this.age = myAge;
+    }
+    Teacher.prototype.say = function () {
+      console.log('this is my name:' + this.name);
+    }
+
+    function Student(myName, myAge) {
+      Teacher.call(this, myName, myAge)
+      // Teacher.prototype.call(this)
+    }
+    let student = new Student('cyan', 18)
+    console.log(student);
+    student.say()
+    let teacher = new Teacher('wmm', 28);
+    console.log(teacher);
+    teacher.say()
+  </script>
+</body>
+
+</html>

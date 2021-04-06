@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            /* display: inline-block; */
+            list-style: none;
+            width: 238px;
+            height: 305px;
+            background-color: green;
+            margin-left: 12px;
+            margin-bottom: 9px;
+            float: left;
+        }
+        
+        .box {
+            width: 1238px;
+            height: 619px;
+            margin: 0 auto;
+            background-color: red;
+        }
+        
+        .box .left {
+            width: 237px;
+            height: 619px;
+            background-color: pink;
+            float: left;
+        }
+        /* .box .right {
+            width: 1001px;
+            height: 619px;
+            background-color: skyblue;
+            float: left; }*/
+        
+        .right div {
+            width: 238px;
+            height: 305px;
+            background-color: green;
+            float: left;
+            margin-left: 12px;
+            margin-bottom: 9px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="left">左边框</div>
+        <!-- <div class="right">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div> -->
+        <ul class="right">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+        </ul>
+    </div>
+</body>
+
+</html>

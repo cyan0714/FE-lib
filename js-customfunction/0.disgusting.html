@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(typeof (a)); //undefined
+        console.log(typeof (undefined)); //undefined
+        console.log(typeof (NaN)); //number
+        console.log(typeof (null)); //object
+        var a = "123abc";
+        console.log(typeof (+a)); //number
+        console.log(typeof (!!a)); //boolean
+        console.log(typeof (a + "")); //string
+        console.log(typeof (typeof (a))); //string
+        console.log(1 == '1'); //true
+        console.log(NaN == NaN); //false
+        console.log(NaN == undefined); //false
+        console.log("11" + 11); //1111
+        console.log(parseInt("123abc")); //123
+        console.log(null == 0); //false
+        console.log(undefined == 0); //false
+        console.log(null >= 0); //true
+    </script>
+</body>
+
+</html>

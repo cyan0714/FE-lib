@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <ul>
+        <li>这是第一个li</li>
+        <li>这是第二个li</li>
+        <li>这是第三个li</li>
+        <li>这是第四个li</li>
+    </ul>
+</body>
+<script>
+     //利用闭包方式得到当前 li 的索引号
+    var lis = document.querySelectorAll('li');
+    for (var i = 0; i < lis.length; i++) {
+        (function(i) {
+            lis[i].onclick = function() {
+                console.log(i);
+            }
+        })(i);
+    }
+    
+    // function fun() {
+    //     var num = 10;
+
+    //     function fn() {
+    //         console.log(num);
+    //     };
+    //     return fn;
+    // }
+    // var f = fun();
+    // // console.log(f());//输出 10 和 undefined ?
+    // f();
+    /*
+    function fun() {
+        var num = 10;
+
+        function fn() {
+            console.log(num);
+        }
+        fn();
+    }
+    fun();*/
+    // var lis = document.querySelectorAll('li');
+   
+  
+</script>
+
+</html>

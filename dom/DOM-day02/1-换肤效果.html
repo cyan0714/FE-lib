@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            /* box-sizing: border-box; */
+        }
+
+        body {
+            background: url(images/钢铁侠.png) no-repeat center top;
+            background-size: 800px auto;
+        }
+
+        ul {
+            overflow: hidden;
+            padding-top: 3px;
+            width: 310px;
+            margin: 100px auto;
+            background-color: #fff;
+        }
+
+        li {
+            float: left;
+            /* width:100px; */
+            margin: 0 1px;
+            list-style: none;
+        }
+
+        img {
+            width: 100px;
+        }
+
+        .ironman {
+            height: 66.6px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><img src='images/钢铁侠.png' class="ironman"></li>
+        <li><img src='images/black.jpg'></li>
+        <li><img src='images/b83947ca053845e5994fd48ddca861b6.jpeg'></li>
+    </ul>
+    <script>
+        var imgs = document.querySelectorAll('img');
+        for (var i = 0; i < imgs.length; i++) { //利用闭包解决闭包
+            (function (j) {
+                imgs[j].onclick = function () {
+                    var bodyelm = document.querySelector('body');
+                    bodyelm.style.backgroundImage = 'url(' + this.src + ')';
+                    console.log(j);
+                }
+            }(i))
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //1.若修改属性，则两个对象一起变
+    // let obj1 = {
+    //   name: 'csy',
+    //   age: 18
+    // }
+    // let obj2 = obj1;
+    // obj1.name = 'cxy';
+    // console.log(obj1);
+    // console.log(obj2);
+
+    //2.若让 obj1 等于新的地址，则不会影响 obj2
+    // let obj1 = {
+    //   name: 'csy',
+    //   age: 18
+    // }
+    // let obj2 = obj1;
+    // obj1 = {
+    //   name: 'cxy',
+    //   age: 19
+    // };
+    // console.log(obj1);
+    // console.log(obj2);
+
+    //3.浅拷贝: obj1 和 obj2 相互之间不影响
+    // let obj1 = {
+    //   name: 'csy',
+    //   age: 18
+    // }
+    // let obj2 = Object.assign({}, obj1);
+    // obj1.name = 'cxy';
+    // console.log(obj1);
+    // console.log(obj2);
+
+    //4.浅拷贝属性覆盖问题
+    // let obj1 = {
+    //   name: 'qianguyihao',
+    //   age: 28,
+    //   desc: 'hello world',
+    // };
+
+    // let obj2 = {
+    //   name: '许嵩',
+    //   sex: '男',
+    //   age: 18
+    // };
+    // Object.assign(obj2, obj1);//若 obj1 的属性和 obj2 的属性相同，则 obj1 的属性会覆盖 obj2 的属性
+    // console.log(obj2);
+
+    // 5.obj1 里的属性 info 是个对象时，若 obj1 修改 info 里面的 height 时，obj2 也会改变
+    // let obj1 = {
+    //   name: 'csy',
+    //   age: 18,
+    //   info: {
+    //     height: '188'
+    //   }
+    // }
+    // let obj2 = Object.assign({}, obj1);
+    // obj1.name = 'cxy';
+    // obj1.info.height = '189';
+    // console.log(obj1);
+    // console.log(obj2);
+
+    //6.深拷贝
+    let obj1 = {
+      name: 'csy',
+      age: 18,
+      color: [
+        'pink', 'cyan', 'red'
+      ],
+      msg: {
+        height: '188'
+      }
+    }
+    let obj2 = {}
+
+    function deepCopy(newObj, oldObj) {
+      for (let k in oldObj) {
+        let item = oldObj[k];
+        if (item instanceof Array) {
+          newObj[k] = [];
+          deepCopy(newObj[k], item);
+        } else if (item instanceof Object) {
+          newObj[k] = {};
+          deepCopy(newObj[k], item);
+        } else {
+          newObj[k] = item;
+        }
+      }
+    }
+    deepCopy(obj2, obj1)
+    obj1.color = ['blue'];
+    console.log(obj1);
+    console.log(obj2);
+  </script>
+</body>
+
+</html>

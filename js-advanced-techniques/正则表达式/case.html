@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //test() 方法检测字符串里有没有参数 s 
+    // let reg = new RegExp('s');
+    // let str = 'csy';
+    // let str1 = 'cxy';
+    // console.log(reg.test(str));
+    // console.log(reg.test(str1));
+
+    //reg 对象传入两个参数时 第二个可以是 i 或是 g, i 表示 ignore 大小写, g 表示 global 匹配(构造函数方法创建 reg 对象)
+    // let reg = new RegExp('A', 'i');
+    // let str = 'cyan';
+    // console.log(reg.test(str));
+
+    //字面量方法创建 reg
+    // let reg = /A/i;
+    // let str = 'cyan';
+    // console.log(reg.test(str));
+
+    //test() 方法最好不要用 g
+    // let reg = /cyan/;
+    // let str = '_cyan_cyan';
+    // console.log(reg.test(str));// true
+    // console.log(reg.test(str));// true
+    // console.log(reg.test(str));// true
+    // let reg = /cyan/g;
+    // let str = '_cyan_cyan';
+    // console.log(reg.test(str)); // true
+    // console.log(reg.test(str)); // true
+    // console.log(reg.test(str)); // false
+
+    //[^] 表示除了
+    // let reg = /[^ba]/; // [^ab] 表示除了 ab 两个字符外还有其他字符吗
+    // let str = 'abc';
+    // console.log(reg.test(str));
+
+    //[^] 验证某些字符串是否为 纯数字
+    // let reg = /[^0-9]/;
+    // let str = '1999';
+    // let str1 = '1999a';
+    // console.log(reg.test(str)); //false
+    // console.log(reg.test(str1)); //true
+
+    // split() 方法，将字符串转换成数组
+    // var str = "1a2b3c4d5e6f7g";
+    // var result = str.split(/[A-z]/); // 参数是一个正则表达式：表示所有字母
+    // // console.log(str);
+    // console.log(result);
+
+    //search() 方法, 搜索字符串中是否有指定内容，并返回索引值，找不到返回 -1 (只搜索第一次出现的)
+    // let str = 'fdahjkrwedscnc';
+    // let index = str.search(/jkr/);
+    // console.log(index);//4
+
+    //match() 方法，匹配对应的内容
+    // var str = "1a2a3a4a5e6f7A8B9C";
+    // let result1 = str.match(/[a-z]/);
+    // let result2 = str.match(/[a-z]/g);
+    // let result3 = str.match(/[a-z]/gi);
+    // console.log(result1); // ["a", index: 1, input: "1a2a3a4a5e6f7A8B9C", groups: undefined]
+    // console.log(result2); // ["a", "a", "a", "a", "e", "f"]
+    // console.log(result3); // ["a", "a", "a", "a", "e", "f", "A", "B", "C"]
+
+    //replace() 方法，替换对应内容
+    // var str2 = "today is fine day,today is fine day,Today is fine day !!!"
+    // let result = str2.replace('today', 'tomorrow') //这样只能匹配第一个 today
+    // let result1 = str2.replace(/today/g, 'tomorrow') //匹配字符串的所有 today
+    // let result2 = str2.replace(/today/gi, 'tomorrow') //匹配字符串的所有 today
+    // console.log(result);
+    // console.log(result1);
+    // console.log(result2);
+
+    // let reg = /[bcd]/;
+    // let str = 'cbd';
+    // console.log(str.match(reg));
+
+    // let reg = /[zzo*]/;
+    // let str = 'zz';
+    // let str1 = 'zzoo';
+    // console.log(str.match(reg));
+    // console.log(str1.match(reg));
+
+    // let reg = /do(es)?/;
+    // let str = 'do';
+    // let str1 = 'does';
+    // let str2 = 'doess';
+    // console.log(str.match(reg));
+    // console.log(str1.match(reg));
+    // console.log(str2.match(reg));
+
+    // let reg = /^cyan/;
+    // let str = 'cya';
+    // let str1 = '1cyan';
+    // console.log(str.match(reg));
+
+    // let reg = /test/;
+    // let str = 'testtestString';
+    // console.log(reg.exec(str));
+    // console.log(reg.exec(str));
+    // console.log(reg.exec(str));
+    // console.log(str1.match(reg));
+
+    // let str = '1000000320000';
+    // let reg = /(?=(\B)(\d{3})+$)/g;
+    // console.log(str.replace(reg, '.'));
+
+    let str = 'abcabcabc';
+    let reg = /abc/g;
+    console.log(reg.test(str));
+
+    // let reg = /\w\-/g;
+    // let str = 'abc-';
+    // console.log(str.match(reg));
+
+    // let reg = /(\w)(\w)(\w)/;
+    // let str = 'csy';
+    // console.log(str.replace(reg, '$3$1$2$2'));
+
+    // let str = 'the-first-name';
+    // let reg = /-(\w)/g;
+    // console.log(str.replace(reg, function ($, $1) {
+    //   return $1.toUpperCase()
+    // }));
+
+    // let str = 'aaaaabbbbbccccccccc';
+    // let reg = /(\w)\1+/g;
+    // console.log(str.match(reg));
+    // console.log(str.replace(reg, '$1'));
+  </script>
+</body>
+
+</html>

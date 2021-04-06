@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log(Math.random()); //0到1之间，可以取到0，但不能取到1
+        var rdm = function(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        console.log(rdm(1, 10));//生成1~10之间随机整数
+        console.log(getRandom(10, 20));//生成10~20之间随机整数
+        //随机点名
+        var arr = ['张三', '张小三', '张三丰', '李四', '赵武'];
+        console.log(arr[rdm(0, arr.length - 1)]);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

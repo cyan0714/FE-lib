@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        span {
+            display: inline-block;
+            font-size: 13px;
+        }
+        
+        .box {
+            width: 300px;
+            height: 500px;
+            background-color: #fff;
+            margin: auto;
+            /* border: 1px solid grey; */
+        }
+        
+        .top {
+            height: 300px;
+            background-color: #fff;
+            text-align: center;
+            line-height: 200px;
+            border: 1px solid transparent;
+        }
+        
+        .top img {
+            width: 200px;
+            margin-top: 70px;
+        }
+        
+        .box p {
+            margin-bottom: 20px;
+            color: #838383;
+        }
+        
+        .price {
+            height: 50px;
+            background-color: #fff;
+            line-height: 50px;
+        }
+        
+        .price .now {
+            color: #ff0036;
+            font-size: 24px;
+        }
+        
+        .price .old {
+            color: #838383;
+        }
+        
+        .bar {
+            position: relative;
+            height: 30px;
+            line-height: 30px;
+            /* background-color: yellow; */
+        }
+        /* .bar::before {
+            content: "已售";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            margin-top: -7px;
+            height: 14px;
+            font-size: 13px;
+            line-height: 14px;
+        } */
+        
+        .bar::before {
+            content: "87%";
+            position: absolute;
+            top: 50%;
+            left: 33px;
+            margin-top: -7px;
+            /* height: 30px; */
+            font-size: 12px;
+            line-height: 14px;
+            color: red;
+        }
+        
+        .bar::after {
+            content: "29";
+            position: absolute;
+            top: 50%;
+            right: 19px;
+            margin-top: -5px;
+            height: 14px;
+            font-size: 12px;
+            line-height: 14px;
+            color: red;
+        }
+        
+        .bar .bar-in {
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            margin-top: -10px;
+            margin-right: -90px;
+            width: 60%;
+            height: 20px;
+            border-radius: 15px;
+            background-color: #fff;
+            border: 1px solid red;
+        }
+        
+        .bar .bar-p {
+            width: 50%;
+            height: 100%;
+            background-color: red;
+            border-radius: 10px;
+            transition: all .7s;
+        }
+        
+        .bar .bar-p:hover {
+            width: 87%;
+            height: 100%;
+        }
+        
+        .footer {
+            height: 58.4px;
+            background-color: rgb(177, 10, 10);
+            line-height: 58.4px;
+            text-align: center;
+            font-size: 23px;
+            color: #fff;
+            font-weight: 400px;
+            font-family: 宋体;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #ccc;
+        }
+        
+        a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="top">
+            <img src="images/iphone.jpg" alt="">
+        </div>
+        <p>Apple/苹果 iphone 11 pro Max 全网通4G智能手机</p>
+        <div class="price">
+            <span class="now">$6088</span>
+            <span class="old"><del>$6988</del></span>
+        </div>
+        <div class="bar">
+            <span style="font-size: 14px;margin-left: 3px;">已售</span>
+            <div class="bar-in">
+                <div class="bar-p"></div>
+            </div>
+            <span style="font-size: 13px; margin-left: 206px;">剩余&nbsp;&nbsp;&nbsp;件</span>
+        </div>
+        <div class="footer"><a href="https://detail.tmall.com/item.htm?spm=a220o.1000855.1000983.1.6fce57f7NPAZDG&id=605468103182&standard=1" target="_blank"> 立即抢购</a></div>
+    </div>
+</body>
+
+</html>

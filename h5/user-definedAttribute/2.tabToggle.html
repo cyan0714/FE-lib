@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tab 标签</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #F7F7F7;
+    }
+
+    .tabs {
+      width: 400px;
+      margin: 30px auto;
+      background-color: #FFF;
+      border: 1px solid #C0DCC0;
+      box-sizing: border-box;
+    }
+
+    .tabs nav {
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      overflow: hidden;
+      background-color: #C0DCC0;
+      display: flex;
+    }
+
+    nav a {
+      display: block;
+      width: 100px;
+      border-right: 1px solid #FFF;
+      color: #000;
+      text-decoration: none;
+    }
+
+    nav a:last-child {
+      border-right: 0 none;
+    }
+
+    nav a.active {
+      background-color: pink;
+    }
+
+    .cont {
+      /* overflow: hidden; */
+      border: 1px solid red;
+      display: none;
+    }
+
+    .cont ol {
+      line-height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="tabs">
+    <nav>
+      <a href="javascript:;" data-cont="local">国内新闻</a>
+      <a href="javascript:;" data-cont="global">国际新闻</a>
+      <a href="javascript:;" data-cont="sports">体育新闻</a>
+      <a href="javascript:;" data-cont="funny">娱乐新闻</a>
+    </nav>
+    <section class="cont" id="local">
+      <ol>
+        <li>国内新闻1</li>
+        <li>国内新闻2</li>
+        <li>国内新闻3</li>
+        <li>国内新闻4</li>
+        <li>国内新闻5</li>
+        <li>国内新闻6</li>
+        <li>国内新闻7</li>
+      </ol>
+    </section>
+    <section class="cont" id="global">
+      <ol>
+        <li>国内新闻1</li>
+        <li>国际新闻2</li>
+        <li>国际新闻3</li>
+        <li>国际新闻4</li>
+        <li>国际新闻5</li>
+        <li>国际新闻6</li>
+      </ol>
+    </section>
+    <section class="cont" id="sports">
+      <ol>
+        <li>体育新闻1</li>
+        <li>体育新闻2</li>
+        <li>体育新闻3</li>
+        <li>体育新闻4</li>
+        <li>体育新闻5</li>
+        <li>体育新闻6</li>
+        <li>体育新闻7</li>
+      </ol>
+    </section>
+    <section class="cont" id="funny">
+      <ol>
+        <li>娱乐新闻1</li>
+        <li>娱乐新闻2</li>
+        <li>娱乐新闻3</li>
+        <li>娱乐新闻4</li>
+        <li>娱乐新闻5</li>
+        <li>娱乐新闻6</li>
+        <li>娱乐新闻7</li>
+      </ol>
+    </section>
+  </div>
+  <script>
+    (function (key) {
+      let navs = document.querySelectorAll('nav a');
+      for (let i = 0; i <= navs.length; i++) {
+        if (key == i) {
+          navs[i].classList.add('active');
+          let seId = navs[i].dataset['cont'];
+          document.querySelector('#' + seId).style.display = 'block';
+        }
+        navs[i].onclick = function () {
+          let currentNav = document.querySelector('.active');
+          currentNav.classList.remove('active');
+          let currentId = currentNav.dataset['cont'];
+          document.querySelector('#' + currentId).style.display = 'none';
+          this.classList.add("active");
+          let myId = this.dataset["cont"];
+          document.querySelector('#' + myId).style.display = 'block'
+        }
+      }
+    })(1)
+  </script>

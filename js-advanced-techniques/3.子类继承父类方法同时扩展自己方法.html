@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    class Fater {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+      }
+      multiply() {
+        console.log(this.x * this.y);
+      }
+    }
+    class Son extends Fater {
+      constructor(x, y) {
+        super(x, y);
+        this.x = x;
+        this.y = y;
+      }
+      divide() {
+        console.log(this.x / this.y);
+      }
+    }
+    var son = new Son(4, 2);
+    son.divide();
+    son.multiply();
+  </script>
+</body>
+
+</html>

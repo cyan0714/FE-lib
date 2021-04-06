@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .w {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            height: 100px;
+            background-color: red;
+            margin-bottom: 10px;
+        }
+        
+        .banner {
+            height: 200px;
+            margin-bottom: 10px;
+            background-color: green;
+        }
+        
+        .main {
+            height: 1000px;
+            /* margin-bottom: 10px; */
+            background-color: pink;
+        }
+        
+        .stick {
+            position: absolute;
+            top: 250px;
+            left: 1360px;
+            width: 50px;
+            height: 170px;
+            background-color: skyblue;
+        }
+        
+        span {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header w">header
+        <div class="stick w"><span>返回顶部</span></div>
+    </div>
+    <div class="banner w">
+        banner
+
+    </div>
+    <div class="main w">
+        main
+    </div>
+    <script>
+        var stick = document.querySelector('.stick');
+        var header = document.querySelector('.header');
+        var banner = document.querySelector('.banner');
+        var bannerTop = banner.offsetTop;
+        var stickTop = stick.offsetTop;
+        var main = document.querySelector('.main');
+        var mainTop = main.offsetTop;
+        var span = document.querySelector('span')
+        document.addEventListener('scroll', function() {
+            // console.log(window.pageYOffset);
+            var pageYOffset = window.pageYOffset;
+            if (pageYOffset >= bannerTop) {
+                stick.style.position = 'fixed';
+                stick.style.top = stickTop - bannerTop + 'px';
+            } else {
+                stick.style.position = 'absolute';
+                stick.style.top = 250 + 'px';
+            }
+            if (pageYOffset >= mainTop) {
+                span.style.display = 'block';
+            } else {
+                span.style.display = 'none';
+            }
+        })
+
+        function animate(obj, target) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function() {
+                //步长值写到定时器里
+                //把步长值改为整数 不要出现小数的问题
+                // var step=Math.ceil((target-obj.offsetLeft)/10);
+                var step = (target - window.pageYOffset) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                // obj.style.left = window.pageYOffset + step + 'px';
+                window.scroll(0, window.pageYOffset + step)
+                if (window.pageYOffset == target) { //也可以改成大于等于，但是没必要
+                    clearInterval(obj.timer);
+                    if (callback) {
+                        callback();
+                    }
+                }
+
+            }, 15);
+        }
+        span.addEventListener('click', function() {
+            animate(window, 100);
+        })
+    </script>
+</body>
+
+</html>

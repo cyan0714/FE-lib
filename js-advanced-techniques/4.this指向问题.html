@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+    //1.类里面的共有属性和方法一定要加 this 使用
+    //2.constructor 里面的 this 指向实力对象,方法里面的 this 指向这个方法的调用者
+    // var that;
+    // class Star {
+    //     constructor() {
+
+    //     }
+    //     dance() {
+    //         that = this;
+    //         console.log(this);
+    //     }
+    // }
+    // var ldh = new Star();
+    // ldh.dance();
+    // console.log(that == ldh);
+
+    class Star {
+      constructor(uname, age) {
+        this.uname = uname;
+        this.age = age;
+        this.sing();
+      }
+      sing() {
+        console.log(this.uname);
+      }
+    }
+    let ldh = new Star('liudehua');
+  </script>
+</body>
+
+</html>

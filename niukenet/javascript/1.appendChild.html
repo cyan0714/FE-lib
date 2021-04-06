@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <input type="button" id="button1" value="1" onclick="moveBtn(this)">323
+    <input type="button" id="button2" value="2">
+  </div>
+  <script>
+    function moveBtn(obj) {
+      // 复制一个节点
+      let clone = obj.cloneNode(true);
+      // 获取父节点
+      let parent = obj.parentNode;
+      // 往父节点的末尾添加克隆出来的子节点
+      parent.appendChild(clone);
+      // 移除原来的 button1 节点
+      parent.removeChild(obj);
+    }
+  </script>
+</body>
+
+</html>
