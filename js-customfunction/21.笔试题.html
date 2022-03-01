@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-        var name = 'global';
-        var obj = {
-            name: 'local',
-            foo: function () {
-                this.name = 'foo1';
-            }.bind(window)
-        };
-        var bar = new obj.foo();
-        setTimeout(function () {
-            console.log(window.name);
-        }, 0);
-        console.log(bar.name);
-        var bar3 = bar2 = bar;
-        // console.log(bar2);
-        bar2.name = 'foo2';
-        console.log(bar3.name);
+      var name = 'global';
+      var obj = {
+        name: 'local',
+        foo: function () {
+          this.name = 'foo1';
+        }.bind(window),
+      };
+      var bar = new obj.foo();
+      setTimeout(function () {
+        console.log(window.name);
+      }, 0);
+      console.log(bar.name); //foo1
+      var bar3 = (bar2 = bar);
+      // console.log(bar2);
+      bar2.name = 'foo2';
+      console.log(bar3.name); //foo2
     </script>
-</head>
+  </head>
 
-<body>
-
-</body>
-
+  <body></body>
 </html>
