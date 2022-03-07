@@ -1,0 +1,6 @@
+.title {
+  color: red;
+  /* postcss-preset-env 会将以下背景色转成 rgba 的形式 */
+  background-color: #12345678;
+  user-select: none;
+}
