@@ -2,7 +2,7 @@ const path = require('path')
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { DefinePlugin } = require("webpack");
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
    // 设置模式
@@ -16,7 +16,7 @@ module.exports = {
   output: {
     // dirname 可以获取当前文件的绝对路径
     path: path.resolve(__dirname, "./build"),
-    filename: "bundle.js"
+    filename: "js/bundle.js"
   },
   module: {
     rules: [
@@ -44,7 +44,7 @@ module.exports = {
         },
         parser: {
           dataUrlCondition: {
-            maxSize: 100 * 1024
+            maxSize: 10 * 1024
           }
         }
       },
@@ -81,24 +81,25 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
+      template: "./public/index.html",
       title: "哈哈哈哈哈",
-      // template: "./public/index.html",
     }),
     new DefinePlugin({
       BASE_URL: "'./'"
     }),
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     {
-    //       from: "public",
-    //       // to: "./", // 可省略，默认会复制到打包的目录下
-    //       globOptions: {
-    //         ignore: [
-    //           "**/index.html"
-    //         ]
-    //       }
-    //     }
-    //   ]
-    // })
+    // 打包报错一般是 CopyWebpackPlugin 版本问题
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "public",
+          to: "./", // 可省略，默认会复制到打包的目录下
+          globOptions: {
+            ignore: [
+              "**/index.html"
+            ]
+          }
+        }
+      ]
+    })
   ]
 }
