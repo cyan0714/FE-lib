@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    // var div = document.querySelector('div');
+    // var time = 5
+    // // countDown();
+    // setInterval(countDown, 1000);
+
+    // function countDown() {
+    //   if (time == 0) {
+    //     location.href = 'http://www.baidu.com';
+    //   } else {
+    //     div.innerHTML = '您的页面将在' + time + '秒后跳转';
+    //     time--;
+    //   }
+    // }
+
+    console.log(window.location)
+
+    // 当前的完整的 url 地址
+    console.log(location.href)
+
+    // 协议 protocol
+    console.log(location.protocol)
+
+    // 几个方法
+    // location.assign("http://www.baidu.com")
+    location.replace("http://www.baidu.com")
+
+    // 当值为 true 时，将强制浏览器从服务器加载页面资源，当值为 false 或者未传参时，浏览器则可能从缓存中读取页面
+    location.reload(false)
+
+    // 属性
+    location.href = "http://www.baidu.com"
+
+  </script>
+</body>
+
+</html>

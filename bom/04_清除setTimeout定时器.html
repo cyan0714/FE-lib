@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <button class="countdown">5</button>
+    <button class="boom">click to defuse a boom</button>
+    <script>
+      let countDown = 4
+      let timerCountDown = setInterval(function() {
+        document.querySelector('.countdown').innerHTML = countDown
+        countDown -= 1
+      },1000)
+
+      let timer = setTimeout(function () {
+        alert('boom!')
+      }, 5000)
+
+      document.querySelector('.boom').addEventListener('click', function () {
+        clearTimeout(timer);
+        clearInterval(timerCountDown);
+        alert('you have stopped an explosion!')
+      })
+    </script>
+  </body>
+</html>

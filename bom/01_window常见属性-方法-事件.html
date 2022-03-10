@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 4000px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="hashchange">改变hash</button>
+    <script>
+      // 1.常见的属性
+      // screenX 和 screenY 分别返回浏览器顶部距离系统桌面顶部的水平和垂直距离。
+      // console.log(window.screenX)
+      // console.log(window.screenY)
+
+      // 返回文档在水平和垂直方向已滚动的像素值。
+      // window.addEventListener("scroll", () => {
+        // console.log(window.scrollX, window.scrollY)
+        
+      // })
+
+      // 获取整个浏览器窗口的高度（单位：像素）
+      // console.log(window.outerHeight)
+
+      // 浏览器窗口的视口（viewport）高度（以像素为单位）；如果有水平滚动条，也包括滚动条高度。
+      // console.log(window.innerHeight)
+
+      // 2.常见的方法
+      // const scrollBtn = document.querySelector("#scroll")
+      // scrollBtn.onclick = function() {
+      //   // 1.scrollTo
+      //   // window.scrollTo({ top: 2000 })
+
+      //   // 2.close
+      //   // window.close()
+
+      //   // 3.open
+      //   window.open("http://www.baidu.com", "_self")
+      // }
+
+      // 3.常见的事件
+      // window.onload = function () {
+      //   console.log('window窗口加载完毕~')
+      // }
+
+      // window.onfocus = function () {
+      //   console.log('window窗口获取焦点~')
+      // }
+
+      // window.onblur = function () {
+      //   console.log('window窗口失去焦点~')
+      // }
+
+      const hashChangeBtn = document.querySelector('#hashchange')
+      hashChangeBtn.onclick = function () {
+        location.hash = 'aaaa'
+      }
+      window.onhashchange = function () {
+        console.log('hash发生了改变')
+      }
+    </script>
+  </body>
+</html>

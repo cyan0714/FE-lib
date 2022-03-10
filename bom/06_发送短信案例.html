@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    手机号码：<input type="number" /><button>发送</button>
+    <script>
+      //按钮点击之后，会禁用 disable 为 true
+      //同时按钮里面的内容会变化，注意 button 里面的内容通过 innerHTML 修改
+      //利用 setInterval 设置倒计时
+      //定义一个变量在定时器里面，不断递减
+      //倒计时结束后复原 button 和 清除倒计时
+      var btn = document.querySelector('button')
+
+      btn.addEventListener('click', function () {
+        this.disabled = true
+        var time = 3
+        var timer = setInterval(function () {
+          if (time == 0) {
+            btn.disabled = false
+            clearInterval(timer)
+            btn.innerHTML = '发送'
+            time = 3 //重新开始倒计时
+          } else {
+            btn.innerHTML = time + '秒后可重新发送'
+            time--
+          }
+        }, 1000)
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .ad {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="ad">这是个广告</div>
+    <script>
+      var ad = document.querySelector('.ad')
+      setTimeout(function () {
+        ad.style.display = 'none'
+      }, 3000)
+    </script>
+  </body>
+</html>
