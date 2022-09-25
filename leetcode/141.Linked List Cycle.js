@@ -7,10 +7,11 @@
 const hasCycle = (head) => {
   let fast = head
   let slow = head
+
   while (fast !== null && fast.next !== null) {
     slow = slow.next
-    fast = false.next.next
-    if (slow === fast) return true
+    fast = fast.next.next
+    if (fast === slow) return true
   }
 
   return false
