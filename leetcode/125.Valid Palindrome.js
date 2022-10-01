@@ -16,6 +16,7 @@
 // Explanation: s is an empty string "" after removing non-alphanumeric characters.
 // Since an empty string reads the same forward and backward, it is a palindrome.
 
+// method 1
 const isPalindrome = (s) => {
   const newStr = s.toLowerCase().replace(/[\W_]/g, '');
   if (s.length < 2) return true;
@@ -30,4 +31,13 @@ const isPalindrome = (s) => {
   }
   
   return true
+}
+
+// method 2
+const isPalindrome2 = (s) => {
+  if (s.length < 2) return true
+  s = s.toLowerCase().replace(/[\W_]/g, '')
+  const s2 = s.split('').reverse().join("")
+  
+  return s === s2
 }
