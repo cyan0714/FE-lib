@@ -17,12 +17,12 @@ const maxProfit = (prices) => {
   if (prices.length === 0) return 0;
   
   let min = prices[0]
-  let maxProfit = 0
+  let max = 0
 
   for (let price of prices) {
     min = Math.min(min, price)
-    maxProfit = Math.max(maxProfit, price - min)
+    max = Math.max(max, price - min)
   }
 
-  return maxProfit
+  return max
 }
