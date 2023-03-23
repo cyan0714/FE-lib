@@ -51,6 +51,26 @@ class LinkedList<T> {
     this.size++
   }
 
+  removeAt(index: number) {
+    if (index < 0 || index >= this.size) {
+      throw new Error('Index out of range')
+    }
+    let current = this.head
+    if (index === 0) {
+      this.head = current!.next
+    } else {
+      let previous: Node<T> | null = null
+      for (let i = 0; i < index; i++) {
+        previous = current
+        current = current!.next
+      }
+      if (previous) {
+        previous.next = current!.next
+      }
+    }
+    this.size--
+  }
+
   traverse() {
     let current = this.head
     while (current !== null) {
@@ -67,6 +87,8 @@ linkedList.append('c')
 linkedList.traverse() // a b c
 linkedList.insert('d', 1)
 linkedList.traverse() // a d b c
+linkedList.removeAt(2)
+linkedList.traverse() // a d c
 
 
 
